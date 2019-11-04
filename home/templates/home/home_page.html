@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load wagtailcore_tags %}
+
 {% load static %}
 
 {% block body_class %}template-homepage{% endblock %}
@@ -13,9 +15,6 @@ Delete the line below if you're just getting started and want to remove the welc
 
 {% block content %}
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+{{ page.body|richtext }}
 
 {% endblock content %}

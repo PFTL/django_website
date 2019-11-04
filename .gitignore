@@ -1,1 +1,3 @@
 production.py
+.idea
+__pycache__/
