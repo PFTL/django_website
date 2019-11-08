@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+{% block title %}List of Articles{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center my-3">
+            <h3>{{ self.introduction }}</h3>
+        </div>
+        <div class="row">
+            {% for article in posts %}
+                <div class="col-sm-4">
+                    <div class="row px-3">
+                        {% if article.image %}
+                            <img src="/media/images/{{ article.image }}"
+                                 style="width:100%; border-radius: 10px;">
+                        {% else %}
+                            <img src="{% static '/img/general_header.jpg' %}" style="width:100%">
+                        {% endif %}
+                        <h1>
+                            <a href="{% pageurl article %}" rel="bookmark"
+                               title="Permalink to {{ article.title|striptags }}" class="article-title-thumbnail">
+                                {{ article.title }}
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="row px-3">
+                        {{ article.summary }}
+                        <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
