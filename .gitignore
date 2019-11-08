@@ -1,3 +1,5 @@
 production.py
 .idea
 __pycache__/
+media/
+*.sqlite3
