@@ -48,7 +48,6 @@ class BlockQuote(StructBlock):
         template = "blocks/blockquote.html"
 
 
-
 class BaseStreamBlock(StreamBlock):
     """
     Define the custom blocks that `StreamField` will utilize
