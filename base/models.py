@@ -90,43 +90,10 @@ class BasePage(Page):
 class HomePage(Page):
     """ Home Page, needs to respect the sections available in the template.
     """
-    # Image that goes in the first section of the homepage
-    image = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        help_text='Homepage illustration'
-    )
-
-    # The logo can be different between the homepage and other pages
-    logo = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        help_text='Logo'
-    )
 
     # This is the text that goes next to the image
-    hero_text = models.CharField(
-        max_length=255,
-        help_text='Write an introduction for the bakery'
-    )
-
-    # Body section of the HomePage, in case there is anything else to add
-    body = StreamField(
-        BaseStreamBlock(), verbose_name="Home content block", blank=True
-    )
-
-    # This is what will be shown below the navbar (e.g. latest articles)
-    featured_section_title = models.CharField(
-        null=True,
-        blank=True,
-        max_length=255,
-        help_text='Title to display above the promo copy'
+    hero_text = RichTextField(
+        help_text='Write an introduction for the Landing Page'
     )
 
     featured_section = models.ForeignKey(
@@ -140,16 +107,9 @@ class HomePage(Page):
     )
 
     content_panels = Page.content_panels + [
-        MultiFieldPanel([
-            ImageChooserPanel('image'),
             FieldPanel('hero_text', classname="full"),
-        ], heading="Hero section"),
-        StreamFieldPanel('body'),
-        MultiFieldPanel([
-            FieldPanel('featured_section_title'),
             PageChooserPanel('featured_section'),
-        ])
-    ]
+        ]
 
     def __str__(self):
         return self.title
