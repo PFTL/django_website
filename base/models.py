@@ -107,13 +107,12 @@ class HomePage(Page):
     )
 
     content_panels = Page.content_panels + [
-            FieldPanel('hero_text', classname="full"),
+            FieldPanel('hero_text'),
             PageChooserPanel('featured_section'),
         ]
 
     def __str__(self):
         return self.title
-
 
 class FormField(AbstractFormField):
     """ Quick and dirty solution to add forms through the Wagtail admin

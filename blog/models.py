@@ -115,6 +115,9 @@ class BlogPage(Page):
     # Empty list means that no child content types are allowed.
     subpage_types = []
 
+    class Meta:
+        ordering = ['-date_published']
+
 
 class BlogIndexPage(RoutablePageMixin, Page):
     """ Index page for the Blog.
