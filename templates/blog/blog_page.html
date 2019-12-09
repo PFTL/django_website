@@ -1,1 +1,348 @@
 {% extends 'base.html' %}
+{% load wagtailimages_tags wagtailcore_tags %}
+{% block body %}
+    <!-- Wrapper -->
+    <section class="wrapper">
+
+        <!-- Intro -->
+        <div class="intro blog article">
+            <div class="container">
+                <!-- Header -->
+                <div class="header">
+                    <a href="/" class="logo">Python for the Lab</a>
+                    <div class="header-dd">
+                        <div class="navigation">
+                            <ul>
+                                <li class="active"><a href="blog.html" class="nav-item blog"><span>Blog</span></a></li>
+                                <li><a href="https://www.uetke.com/courses/" target="_blank"
+                                       class="nav-item courses"><span>Courses</span></a></li>
+                                <li><a href="https://forum.pythonforthelab.com/" target="_blank" class="nav-item forum"><span>Forum</span></a>
+                                </li>
+                                <li><a href="books.html" class="nav-item books"><span>Books</span></a></li>
+                                <li><a href="about.html" class="nav-item about"><span>About</span></a></li>
+                                <li class="mail"><span class="mail-item">aquiles@uetke.com</span></li>
+                            </ul>
+                        </div>
+                        <div class="search field-wp">
+                            <form action="">
+                                <input type="text" class="field" placeholder="Type to Search">
+                                <input type="submit" class="search-btn">
+                            </form>
+                        </div>
+                    </div>
+                    <button class="menu-btn"><span>Menu</span></button>
+                </div>
+                <!-- End Header -->
+
+                <!-- Intro Cnt -->
+                <div class="intro-cnt v-article">
+                    <div class="side-text"></div>
+                    <div class="side-form small-sb-form">
+                        <div class="sb-form">
+                            <h4>Get all the information directly to your inbox</h4>
+                            <form action="">
+                                <div class="field-wp">
+                                    <input type="text" class="field" placeholder="Your E-Mail">
+                                </div>
+                                <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+                                <span class="small-text">Get relevant information, unsubscribe at any time.</span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Intro Cnt -->
+
+            </div>
+        </div>
+        <!-- End Intro -->
+
+        <!-- Main -->
+        <div class="main">
+            <div class="container">
+
+                <div class="article-cnt">
+                    <div class="leftside">
+                        <div class="article-image">
+                            {% if page.image %}
+                                {% image page.image width-800 %}
+                            {% endif %}
+                        </div>
+                        <h1>{{ page.title }}</h1>
+                        <h3>{{ page.subtitle }}</h3>
+                        <div class="info">
+                            <span class="item-1 author">by {{ page.first_author }}</span>
+                            {% if page.date_published %}
+                                <span class="item-1 date">{{ page.date_published }}</span>
+                            {% endif %}
+                            {% for tag in page.get_tags %}
+                                <span class="item-tag {% if forloop.counter == 1 %}first{% endif %}">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        <p>{{ page.introduction }}</p>
+                        {#                        <div class="toc">#}
+                        {#                            <div class="title">List of Contents</div>#}
+                        {#                            <ul>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#title-1">Introduction to importing</a>#}
+                        {#                                </li>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#">Importing *</a>#}
+                        {#                                </li>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#">Importing As</a>#}
+                        {#                                </li>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#">Importing your code</a>#}
+                        {#                                </li>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#">Adding Folder to the Path</a>#}
+                        {#                                    <ul>#}
+                        {#                                        <li><a href="#">PYTHONPATH and Virtual Environment</a></li>#}
+                        {#                                        <li><a href="#">PYTHONPATH and PyCharm</a></li>#}
+                        {#                                    </ul>#}
+                        {#                                </li>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#">Absolute Imports</a>#}
+                        {#                                </li>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#">Relative Imports</a>#}
+                        {#                                    <ul>#}
+                        {#                                        <li><a href="#">Mixing Absolute and Relative</a></li>#}
+                        {#                                    </ul>#}
+                        {#                                </li>#}
+                        {#                                <li>#}
+                        {#                                    <a href="#">Absolute or Relative: Conclusions</a>#}
+                        {#                                </li>#}
+                        {#                            </ul>#}
+                        {#                        </div>#}
+                        {% for block in page.body %}
+                            {{ block }}
+                        {% endfor %}
+                        <div class="info-list">
+                            <span class="item author">Article written by {{ page.first_author }}</span>
+                            {% if page.image_data %}
+                            <span class="item designer">{{ page.image_data|richtext }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="similar-posts">
+                            <h3>Similar Articles:</h3>
+                            <ul>
+                                <li>
+                                    <a href="#" class="item">
+                                        <img src="css/images/post-image-2.png" alt="">
+                                        <span class="date">22 SEP 2019</span>
+                                        <span class="name">Imports: Absolute, Relative and More</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item">
+                                        <img src="css/images/post-image-2.png" alt="">
+                                        <span class="date">12 SEP 2019</span>
+                                        <span class="name">Handling and Sharing Data Between Threads</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="item">
+                                        <img src="css/images/post-image-2.png" alt="">
+                                        <span class="date">12 SEP 2019</span>
+                                        <span class="name">Monkey Patching and its consequences</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bottom-section">
+                            <div class="sec-top">
+                                <h3>You liked this tutorial?</h3>
+                                <h4>Share it with your friends!</h4>
+                                <div class="share">
+                                    <a href="#" target="_blank" class="soc-icon tw">Twitter</a>
+                                    <a href="#" target="_blank" class="soc-icon fb">Facebook</a>
+                                    <a href="#" target="_blank" class="soc-icon in">Instagram</a>
+                                </div>
+                            </div>
+                            <h4>Or share your thoughts with us!</h4>
+                            <div class="comment-add">
+								<span class="profile-image">
+									<img src="css/images/profile-image.png" alt="">
+								</span>
+                                <form action="">
+                                    <div class="comment-form">
+                                        <div class="field-wp">
+                                            <input type="text" class="field" placeholder="Your Name">
+                                        </div>
+                                        <div class="connect-wp">
+                                            <span class="text">or log in with:</span>
+                                            <a href="#" class="icon fb"></a>
+                                            <a href="#" class="icon gp"></a>
+                                            <a href="#" class="icon tw"></a>
+                                        </div>
+                                        <div class="textarea-wp">
+                                            <textarea class="field" placeholder="Your Comment"></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="comments">
+                                <div class="all">3 Comments</div>
+
+                                <!-- Comment -->
+                                <div class="comment">
+                                    <div class="profile-image">
+                                        <img src="css/images/profile-image.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <span class="name">Paul Johnson</span>
+                                        <span class="date">9 days ago</span>
+                                        <span class="hands">
+											<button class="hand like"></button>
+											<button class="hand unlike"></button>
+										</span>
+                                    </div>
+                                    <div class="comment-cnt">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
+                                        <p>Ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <button class="reply-btn">Reply</button>
+                                    </div>
+
+                                    <!-- Reply -->
+                                    <div class="comment reply">
+                                        <div class="profile-image">
+                                            <img src="css/images/profile-image.png" alt="">
+                                        </div>
+                                        <div class="comment-info">
+                                            <span class="name">Mark Hale</span>
+                                            <span class="reply-name">Paul Johnson</span>
+                                            <span class="date">9 days ago</span>
+                                            <span class="hands">
+												<button class="hand like"></button>
+												<button class="hand unlike"></button>
+											</span>
+                                        </div>
+                                        <div class="comment-cnt">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
+                                        </div>
+                                    </div>
+                                    <!-- End Reply -->
+
+                                </div>
+                                <!-- End Comment -->
+
+                                <!-- Comment -->
+                                <div class="comment">
+                                    <div class="profile-image">
+                                        <img src="css/images/profile-image.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <span class="name">Mary Austin</span>
+                                        <span class="date">11 days ago</span>
+                                        <span class="hands">
+											<button class="hand like"></button>
+											<button class="hand unlike"></button>
+										</span>
+                                    </div>
+                                    <div class="comment-cnt">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
+                                        <p>Ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <button class="reply-btn">Reply</button>
+                                    </div>
+                                </div>
+                                <!-- End Comment -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightside">
+                        <div class="support-box">
+                            <h3>Support Us</h3>
+                            <p>If you like the content of this website, consider buying a copy of the book <strong>Python
+                                For The Lab</strong></p>
+                            <a href="books.html" class="button">Check out the book</a>
+                        </div>
+                        <div class="latest-posts">
+                            <h3>Latest Articles</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">Handling and Sharing Data Between Threads</a>
+                                    <span>by Aquiles Carattino, 12 October 2019</span>
+                                </li>
+                                <li>
+                                    <a href="#">Starting and Synchronizing Threads</a>
+                                    <span>by Aquiles Carattino, 05 October 2019</span>
+                                </li>
+                                <li>
+                                    <a href="#">Monkey Patching and its consequences</a>
+                                    <span>by Aquiles Carattino, 28 September 2019</span>
+                                </li>
+                                <li>
+                                    <a href="#">by Aquiles Carattino, 28 September 2019</a>
+                                    <span>by Aquiles Carattino, 15 September 2019</span>
+                                </li>
+                                <li>
+                                    <a href="#">Intro to Python Lambda Functions</a>
+                                    <span>by Aquiles Carattino, 05 October 2019</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="subscribe-fixed">
+                            <button class="action">Never Stop Learning</button>
+                            <div class="cnt">
+                                <p>Join over 1000 Python developers and don't miss any updates!</p>
+                                <form action="">
+                                    <div class="field-wp">
+                                        <input type="text" class="field" placeholder="Your E-Mail">
+                                    </div>
+                                    <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+                                </form>
+                                <p>Or check out our <a href="#">Boosk</a>! <br> <a href="#">Privacy Policy</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-sb-form">
+                    <div class="sb-form">
+                        <h4>Get all the information directly to your inbox</h4>
+                        <form action="">
+                            <div class="field-wp">
+                                <input type="text" class="field" placeholder="Your E-Mail">
+                            </div>
+                            <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+                            <span class="small-text">Get relevant information, unsubscribe at any time.</span>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Main -->
+
+    </section>
+    <!-- End Wrapper -->
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-cnt">
+                <p class="left">
+                    &copy; Python For The Lab <span class="current-year">2019</span>
+                </p>
+                <p class="right">
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+{% endblock %}

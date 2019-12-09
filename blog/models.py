@@ -6,7 +6,7 @@ from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase, Tag
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
-from wagtail.core.fields import StreamField
+from wagtail.core.fields import StreamField, RichTextField
 from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
@@ -52,6 +52,11 @@ class BlogPage(Page):
         help_text='Header Image, used also for social sharing'
     )
 
+    image_data = RichTextField(
+        blank=True,
+        null=True,
+        help_text='Information about the header image, to appear after the article')
+
     body = StreamField(
         BaseStreamBlock(), verbose_name="Page body", blank=True
     )
@@ -65,8 +70,9 @@ class BlogPage(Page):
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
         FieldPanel('subtitle', classname="full"),
-        FieldPanel('introduction', classname="full"),
+        FieldPanel('introduction'),
         ImageChooserPanel('image'),
+        FieldPanel('image_data'),
         FieldPanel('date_published'),
         InlinePanel(
             'blog_person_relationship', label="Author(s)",
@@ -93,6 +99,10 @@ class BlogPage(Page):
         return authors
 
     @property
+    def first_author(self):
+        return self.authors()[-1]
+
+    @property
     def get_tags(self):
         """
         Similar to the authors function above we're returning all the tags that
@@ -116,7 +126,7 @@ class BlogPage(Page):
     subpage_types = []
 
     class Meta:
-        ordering = ['-date_published']
+        ordering = ['date_published']
 
 
 class BlogIndexPage(RoutablePageMixin, Page):
