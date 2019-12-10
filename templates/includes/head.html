@@ -3,7 +3,18 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
 
-    <title>Home | Python for the Lab</title>
+    <title>
+        {% block title %}
+            {% block title_prefix %}
+                Python for the Lab
+            {% endblock %}
+            {% if self.seo_title %}
+                {{ self.seo_title }}
+            {% else %}
+                {{ self.title }}
+            {% endif %}
+        {% endblock %}
+    </title>
 
     <link rel="apple-touch-icon" sizes="57x57" href="{% static 'css/favicon/apple-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static 'css/favicon/apple-icon-60x60.png' %}">
@@ -19,6 +30,8 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'css/favicon/favicon-96x96.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'css/favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'css/favicon/manifest.json' %}">
+
+    <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="css/favicon/ms-icon-144x144.png' %}">
     <meta name="theme-color" content="#ffffff">
@@ -28,7 +41,7 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-migrate-1.2.1.js' %}"></script>
 
     <!--[if lt IE 9]>
@@ -37,4 +50,7 @@
 	<![endif]-->
 
     <script src="{% static 'js/functions.js' %}"></script>
+    <script src="{% static 'js/prism.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/prism.css' %}"/>
+
 </head>

@@ -1,24 +1,30 @@
 {% load static %}
+{% load wagtailuserbar %}
 <!DOCTYPE html>
 <html lang="en">
-{% include 'includes/head.html' %}
-<body>
-{% block body %}
+{% block head %}
+    {% include 'includes/head.html' %}
 {% endblock %}
-<!-- Footer -->
-<div class="footer">
-    <div class="container">
-        <div class="footer-cnt">
-            <p class="left">
-                &copy; Python For The Lab <span class="current-year">2019</span>
-            </p>
-            <p class="right">
-                <a href="#">Cookie Policy</a>
-                <a href="#">Privacy Policy</a>
-            </p>
-        </div>
+<body>
+{% wagtailuserbar %}
+<!-- Wrapper -->
+<section class="wrapper {% block wrapper_class %}{% endblock %}">
+    {% block  header %}
+        {% include 'includes/header.html' with parent=site_root calling_page=self %}
+    {% endblock %}
+    {% block head-extra %}
+    {% endblock %}
+    {% block messages %}
+        {% include "includes/messages.html" %}
+    {% endblock messages %}
+    <div class="main">
+        {% block content %}
+        {% endblock %}
     </div>
-</div>
-<!-- End Footer -->
+</section>
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock %}
+
 </body>
 </html>
