@@ -125,6 +125,11 @@ class BlogPage(Page):
     # Empty list means that no child content types are allowed.
     subpage_types = []
 
+    def get_context(self, request):
+        context = super(BlogPage, self).get_context(request)
+        context['latest_articles'] = BlogPage.objects.live().order_by('-date_published')[:5]
+        return context
+
     class Meta:
         ordering = ['date_published']
 
