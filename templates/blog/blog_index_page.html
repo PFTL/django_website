@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load wagtailimages_tags wagtailcore_tags %}
+{% block header_intro_text %}
+    <h1>{{ self.title }}</h1>
+    <p>{{ self.introduction }}.</p>
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <!-- Articles List -->
+        <div class="articles-list">
+            {% for article in posts %}
+                <div class="item">
+                    <span class="image">{% image article.image fill-370x195 %}</span>
+                    <span class="date">{{ article.date_published }}</span>
+                    <a href="{{ article.url }}" class="title">{{ article.title }}</a>
+                    <span class="text">{{ article.introduction }}</span>
+                    <span class="more-btn"><span>Read Article</span></span>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- End Articles List -->
+        {% if posts.paginator.num_pages > 1 %}
+            <!-- Pagination -->
+            <div class="pagination">
+                <div class="pag-list">
+                    <ul>
+                        {% if posts.has_previous %}
+                            <li>
+                                <a href="?page={{ posts.previous_page_number }}" class="prev-btn">Prev</a>
+                            </li>
+                        {% endif %}
+                        {% for page_num in posts.paginator.page_range %}
+                            <li>
+                                <a href="?page={{ page_num }}"
+                                   class="number {% if page_num == posts.number %} active{% endif %}">{{ page_num }}</a>
+                            </li>
+                        {% endfor %}
+                        {% if posts.has_next %}
+                            <li>
+                                <a href="?page={{ posts.next_page_number }}" class="next-btn">Next</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <!-- End Pagination -->
+        {% endif %}
+
+        <div class="mobile-sb-form">
+            <div class="sb-form">
+                <h4>Get all the information directly to your inbox</h4>
+                <form action="">
+                    <div class="field-wp">
+                        <input type="text" class="field" placeholder="Your E-Mail">
+                    </div>
+                    <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+                    <span class="small-text">Get relevant information, unsubscribe at any time.</span>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

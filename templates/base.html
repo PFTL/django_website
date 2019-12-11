@@ -9,11 +9,39 @@
 {% wagtailuserbar %}
 <!-- Wrapper -->
 <section class="wrapper {% block wrapper_class %}{% endblock %}">
-    {% block  header %}
-        {% include 'includes/header.html' with parent=site_root calling_page=self %}
-    {% endblock %}
-    {% block head-extra %}
-    {% endblock %}
+    <!-- Intro -->
+    <div class="intro blog article">
+        <div class="container">
+            {% block  header %}
+                {% include 'includes/header.html' with parent=site_root calling_page=self %}
+            {% endblock %}
+            {% block head-extra %}
+            {% endblock %}
+            {% block intro_cnt %}
+                <!-- Intro Cnt -->
+                <div class="intro-cnt v-article">
+                    <div class="side-text">
+                        {% block header_intro_text %}
+                        {% endblock %}
+                    </div>
+                    <div class="side-form small-sb-form">
+                        <div class="sb-form">
+                            <h4>Get all the information directly to your inbox</h4>
+                            <form action="">
+                                <div class="field-wp">
+                                    <input type="text" class="field" placeholder="Your E-Mail">
+                                </div>
+                                <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+                                <span class="small-text">Get relevant information, unsubscribe at any time.</span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Intro Cnt -->
+            {% endblock %}
+        </div>
+    </div>
+    <!-- End Intro -->
     {% block messages %}
         {% include "includes/messages.html" %}
     {% endblock messages %}
