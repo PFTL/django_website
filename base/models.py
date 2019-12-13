@@ -2,7 +2,7 @@ from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
 from wagtail.admin.edit_handlers import MultiFieldPanel, FieldRowPanel, FieldPanel, StreamFieldPanel, PageChooserPanel, \
-    InlinePanel
+    InlinePanel, RichTextFieldPanel
 from wagtail.contrib.forms.models import AbstractFormField, AbstractEmailForm
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.core.models import Page
@@ -81,10 +81,27 @@ class BasePage(Page):
         BaseStreamBlock(), verbose_name="Page body", blank=True
     )
     content_panels = Page.content_panels + [
-        FieldPanel('introduction', classname="full"),
+        RichTextFieldPanel('introduction', classname="full"),
         StreamFieldPanel('body'),
         ImageChooserPanel('image'),
     ]
+
+    def get_context(self, request):
+        context = super(BasePage, self).get_context(request)
+        # Very silly way of getting the first word of the title and use it as template context
+        c = self.title.split(' ')[0].lower()
+        context['wrapper_class'] = c
+        context['intro_class'] = c
+        return context
+
+
+class BooksPage(BasePage):
+    def get_context(self, request):
+        context = super(BasePage, self).get_context(request)
+        context['intro_class'] = 'about book'
+        context['wrapper_class'] = ''
+        print(context)
+        return context
 
 
 class HomePage(Page):
@@ -110,6 +127,12 @@ class HomePage(Page):
             FieldPanel('hero_text'),
             PageChooserPanel('featured_section'),
         ]
+
+    def get_context(self, request):
+        context = super(HomePage, self).get_context(request)
+        context['wrapper_class'] = 'home'
+        context['intro_class'] = 'home'
+        return context
 
     def __str__(self):
         return self.title

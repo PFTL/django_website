@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% block head-extra %}
+    <div class="about-cnt ab">
+        <h2>{{ page.title }}</h2>
+        {{ page.introduction|richtext }}
+        {% if page.image %}
+        <div class="image-item">
+            {% image page.image fill-400x400 %}
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}
+{% block intro_cnt %}{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="main-cnt ab">
+            {% for block in page.body %}
+            {{ block }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

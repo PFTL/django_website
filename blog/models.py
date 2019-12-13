@@ -129,6 +129,7 @@ class BlogPage(Page):
     def get_context(self, request):
         context = super(BlogPage, self).get_context(request)
         context['latest_articles'] = BlogPage.objects.live().order_by('-date_published')[:5]
+        context['intro_class'] = 'blog article'
         return context
 
     class Meta:
@@ -173,6 +174,7 @@ class BlogIndexPage(RoutablePageMixin, Page):
             # Then return the last page
             posts = paginator.page(paginator.num_pages)
         context["posts"] = posts
+        context["intro_class"] = "blog"
         return context
 
     # This defines a Custom view that utilizes Tags. This view will return all
