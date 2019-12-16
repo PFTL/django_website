@@ -4,29 +4,21 @@
 {% block wrapper_class %}home{% endblock %}
 
 {% block header %}
-    <div class="container">
-        <div class="header">
-            <a href="/" class="logo">Python for the Lab</a>
-            <div class="header-dd">
-                <div class="navigation">
-                    <ul>
-                        <li><a href="/blog" class="nav-item blog"><span>Blog</span></a></li>
-                        <li><a href="https://www.uetke.com/courses/" target="_blank"
-                               class="nav-item courses"><span>Courses</span></a></li>
-                        <li><a href="https://forum.pythonforthelab.com/" target="_blank"
-                               class="nav-item forum"><span>Forum</span></a>
-                        </li>
-                        <li><a href="/books" class="nav-item books"><span>Books</span></a>
-                        </li>
-                        <li><a href="about" class="nav-item about"><span>About</span></a></li>
-                    </ul>
-                </div>
-                <div class="search field-wp">
-                    <form action="">
-                        <input type="text" class="field" placeholder="Type to Search">
-                        <input type="submit" class="search-btn">
-                    </form>
-                </div>
+    <div class="header">
+        <a href="/" class="logo">Python for the Lab</a>
+        <div class="header-dd">
+            <div class="navigation">
+                <ul>
+                    <li><a href="/blog" class="nav-item blog"><span>Blog</span></a></li>
+                    <li><a href="https://www.uetke.com/courses/" target="_blank"
+                           class="nav-item courses"><span>Courses</span></a></li>
+                    <li><a href="https://forum.pythonforthelab.com/" target="_blank"
+                           class="nav-item forum"><span>Forum</span></a>
+                    </li>
+                    <li><a href="/books" class="nav-item books"><span>Books</span></a>
+                    </li>
+                    <li><a href="/about" class="nav-item about"><span>About</span></a></li>
+                </ul>
             </div>
             <div class="search field-wp">
                 <form action="">
@@ -34,29 +26,35 @@
                     <input type="submit" class="search-btn">
                 </form>
             </div>
-            <button class="menu-btn"><span>Menu</span></button>
         </div>
-        <div class="home-cnt">
-            <h1>{{ page.title }}</h1>
-            <div class="intro-img"></div>
-            <p>{{ page.hero_text|richtext }}</p>
-            <div class="subscribe-form">
-                <div class="text"><strong>Get all the information directly to your inbox.</strong> Unsubscribe
-                    any time.
-                </div>
-                <div class="form-cnt">
-                    <form action="">
-                        <div class="field-wp">
-                            <input type="email" class="field" placeholder="Your E-Mail">
-                        </div>
-                        <input type="submit" class="subscribe-btn" value="Subscribe">
-                    </form>
-                </div>
+        <div class="search field-wp">
+            <form action="">
+                <input type="text" class="field" placeholder="Type to Search">
+                <input type="submit" class="search-btn">
+            </form>
+        </div>
+        <button class="menu-btn"><span>Menu</span></button>
+    </div>
+    <div class="home-cnt">
+        <h1>{{ page.title }}</h1>
+        <div class="intro-img"></div>
+        {{ page.hero_text|richtext }}
+        <div class="subscribe-form">
+            <div class="text"><strong>Get all the information directly to your inbox.</strong> Unsubscribe
+                any time.
+            </div>
+            <div class="form-cnt">
+                <form action="">
+                    <div class="field-wp">
+                        <input type="email" class="field" placeholder="Your E-Mail">
+                    </div>
+                    <input type="submit" class="subscribe-btn" value="Subscribe">
+                </form>
             </div>
         </div>
     </div>
 {% endblock %}
-{% block head-extra %}
+{% block navigation_wp %}
     <!-- Navigation Wp -->
     <div class="navigation-wp">
         <div class="container">

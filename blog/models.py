@@ -5,7 +5,7 @@ from django.shortcuts import redirect, render
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase, Tag
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel, TabbedInterface, ObjectList
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.core.models import Page, Orderable
@@ -68,6 +68,8 @@ class BlogPage(Page):
         "Date article published", blank=True, null=True
     )
 
+    allow_comments = models.BooleanField(default=True)
+
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
         FieldPanel('subtitle', classname="full"),
@@ -79,6 +81,10 @@ class BlogPage(Page):
             'blog_person_relationship', label="Author(s)",
             panels=None, min_num=1),
         FieldPanel('tags'),
+    ]
+
+    promote_panels = Page.promote_panels + [
+        FieldPanel('allow_comments'),
     ]
 
     search_fields = Page.search_fields + [
@@ -125,6 +131,9 @@ class BlogPage(Page):
     # Specifies what content types can exist as children of BlogPage.
     # Empty list means that no child content types are allowed.
     subpage_types = []
+
+    def get_absolute_url(self):
+        return self.specific.url
 
     def get_context(self, request):
         context = super(BlogPage, self).get_context(request)

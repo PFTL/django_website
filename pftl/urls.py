@@ -16,6 +16,9 @@ urlpatterns = [
 
     url(r'^search/$', search_views.search, name='search'),
 
+    url(r'^comments/', include('django_comments_xtd.urls')),
+
+    url(r'^accounts/', include('allauth.urls')),
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in
     # the list:
@@ -25,7 +28,6 @@ urlpatterns = [
     # of your site, rather than the site root:
     #    url(r'^pages/', include(wagtail_urls)),
 ]
-
 
 if settings.DEBUG:
     from django.conf.urls.static import static

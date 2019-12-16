@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load wagtailimages_tags wagtailcore_tags %}
+{% load comments comments_xtd %}
 {% block content %}
     <div class="container">
 
@@ -104,103 +105,24 @@
                         </div>
                     </div>
                     <h4>Or share your thoughts with us!</h4>
-                    <div class="comment-add">
-								<span class="profile-image">
-									<img src="css/images/profile-image.png" alt="">
-								</span>
-                        <form action="">
-                            <div class="comment-form">
-                                <div class="field-wp">
-                                    <input type="text" class="field" placeholder="Your Name">
-                                </div>
-                                <div class="connect-wp">
-                                    <span class="text">or log in with:</span>
-                                    <a href="#" class="icon fb"></a>
-                                    <a href="#" class="icon gp"></a>
-                                    <a href="#" class="icon tw"></a>
-                                </div>
-                                <div class="textarea-wp">
-                                    <textarea class="field" placeholder="Your Comment"></textarea>
-                                </div>
+                    {% if self.allow_comments %}
+                        <div class="card card-block mb-5">
+                            <div class="card-body">
+                                <h4 class="card-title text-center pb-3">Post your comment</h4>
+                                {% render_comment_form for self %}
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    {% else %}
+                        <h3 class="text-center">comments are disabled for this article</h3>
+                    {% endif %}
+
                     <div class="comments">
-                        <div class="all">3 Comments</div>
+                        {% get_comment_count for self as comment_count %}
 
-                        <!-- Comment -->
-                        <div class="comment">
-                            <div class="profile-image">
-                                <img src="css/images/profile-image.png" alt="">
-                            </div>
-                            <div class="comment-info">
-                                <span class="name">Paul Johnson</span>
-                                <span class="date">9 days ago</span>
-                                <span class="hands">
-											<button class="hand like"></button>
-											<button class="hand unlike"></button>
-										</span>
-                            </div>
-                            <div class="comment-cnt">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
-                                <p>Ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                    velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <div class="comment-actions">
-                                <button class="reply-btn">Reply</button>
-                            </div>
-
-                            <!-- Reply -->
-                            <div class="comment reply">
-                                <div class="profile-image">
-                                    <img src="css/images/profile-image.png" alt="">
-                                </div>
-                                <div class="comment-info">
-                                    <span class="name">Mark Hale</span>
-                                    <span class="reply-name">Paul Johnson</span>
-                                    <span class="date">9 days ago</span>
-                                    <span class="hands">
-												<button class="hand like"></button>
-												<button class="hand unlike"></button>
-											</span>
-                                </div>
-                                <div class="comment-cnt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
-                                </div>
-                            </div>
-                            <!-- End Reply -->
-
-                        </div>
-                        <!-- End Comment -->
-
-                        <!-- Comment -->
-                        <div class="comment">
-                            <div class="profile-image">
-                                <img src="css/images/profile-image.png" alt="">
-                            </div>
-                            <div class="comment-info">
-                                <span class="name">Mary Austin</span>
-                                <span class="date">11 days ago</span>
-                                <span class="hands">
-											<button class="hand like"></button>
-											<button class="hand unlike"></button>
-										</span>
-                            </div>
-                            <div class="comment-cnt">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
-                                <p>Ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                    velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <div class="comment-actions">
-                                <button class="reply-btn">Reply</button>
-                            </div>
-                        </div>
-                        <!-- End Comment -->
+                        <div class="all">{{ comment_count }} comment{{ comment_count|pluralize }}</div>
+                        {% if comment_count %}
+                            {% render_xtdcomment_tree for self allow_flagging %}
+                        {% endif %}
 
                     </div>
                 </div>

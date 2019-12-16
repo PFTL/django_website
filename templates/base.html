@@ -9,6 +9,7 @@
 {% wagtailuserbar %}
 <!-- Wrapper -->
 <section class="wrapper {{ wrapper_class }}">
+{% block intro %}
     <!-- Intro -->
     <div class="intro {{ intro_class }}">
         <div class="container">
@@ -42,9 +43,11 @@
         </div>
     </div>
     <!-- End Intro -->
+{% endblock intro %}
     {% block messages %}
         {% include "includes/messages.html" %}
     {% endblock messages %}
+    {% block navigation_wp %}{% endblock %}
     <div class="main">
         {% block content %}
         {% endblock %}
