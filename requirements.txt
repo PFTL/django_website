@@ -3,3 +3,4 @@ wagtail>=2.7,<2.8
 django-comments-xtd
 django_allauth
 django-debug-toolbar
+-e git://github.com/dokterbob/django-newsletter.git@30c3ec3f3bea93b22c6640aed40ee2c8040a4f46#egg=django_newsletter

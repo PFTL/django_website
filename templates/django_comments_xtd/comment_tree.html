@@ -1,7 +1,4 @@
-{% load l10n %}
-{% load i18n %}
-{% load comments %}
-{% load comments_xtd %}
+{% load static i18n l10n comments_xtd comments %}
 
 {% for item in comments %}
   <!-- Comment -->
@@ -10,29 +7,40 @@
       {{ item.comment.user_email|xtd_comment_gravatar }}
     </div>
     <div class="comment-info" id="{% get_comment_permalink item.comment %}">
-    <a name="c{{ item.comment.id }}"></a>
-            <span class="name">
+      <a name="c{{ item.comment.id }}"></a>
+      <span class="name">
                 {% if item.comment.url and not item.comment.is_removed %}
                   <a href="{{ item.comment.url }}" target="_new">
                 {% endif %}
-              {{ item.comment.name }}
-              {% if item.comment.url %}</a>{% endif %}&nbsp
-              {% if item.comment.user and item.comment.user|has_permission:"django_comments.can_moderate" %}&nbsp;
-                <span class="badge badge-secondary">{% trans "moderator" %}</span>{% endif %}
-              <a class="permalink" title="comment permalink"
-                 href="{% get_comment_permalink item.comment %}">¶</a></span>
+        {{ item.comment.name }}
+        {% if item.comment.url %}</a>{% endif %}&nbsp
+        {% if item.comment.user and item.comment.user|has_permission:"django_comments.can_moderate" %}&nbsp;
+          <span class="badge badge-secondary">{% trans "moderator" %}</span>{% endif %}
+        <a class="permalink" title="comment permalink"
+           href="{% get_comment_permalink item.comment %}">¶</a></span>
       <span class="date">{{ item.comment.submit_date }}</span>
 
       <span class="hands">
+        {% if show_feedback and item.likedit_users %}
+          <a class="badge badge-primary text-white cfb-counter" data-toggle="tooltip"
+             title="{{ item.likedit_users|join:'<br/>' }}">
+        {{ item.likedit_users|length }}</a>
+        {% endif %}
+
         <a href="{% url 'comments-xtd-like' item.comment.pk %}"
            class="{% if not item.likedit %}mutedlink{% endif %}">
-            <button class="hand like"></button>
-        </a>
+        <span class="fas fa-thumbs-up"></span></a>
+    <span class="text-muted">|</span>
+
+        {% if show_feedback and item.dislikedit_users %}
+          <a class="badge badge-primary text-white cfb-counter" data-toggle="tooltip"
+             title="{{ item.dislikedit_users|join:'<br/>' }}">
+        {{ item.dislikedit_users|length }}</a>
+        {% endif %}
+
         <a href="{% url 'comments-xtd-dislike' item.comment.pk %}"
            class="{% if not item.dislikedit %}mutedlink{% endif %}">
-            <button class="hand unlike"></button>
-        </a>
-      </span>
+        <span class="fas fa-thumbs-down"></span></a>
       <span>
         {% if not item.comment.is_removed %}
           {% if perms.comments.can_moderate %}

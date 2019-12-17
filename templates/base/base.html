@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block intro %}
+  <!-- Intro -->
+  <div class="intro {{ intro_class }}">
+    <div class="container">
+      {% block  header %}
+        {% include 'includes/header.html' with parent=site_root calling_page=self %}
+      {% endblock %}
+      {% block head-extra %}
+      {% endblock %}
+      {% block intro_cnt %}
+        <!-- Intro Cnt -->
+        <div class="intro-cnt v-article">
+          <div class="side-text">
+            {% block header_intro_text %}
+            {% endblock %}
+          </div>
+          <div class="side-form small-sb-form">
+            <div class="sb-form">
+              <h4>Get all the information directly to your inbox</h4>
+              <form  enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
+                {% csrf_token %}
+                <div class="field-wp">
+                  <input type="email" name="email_field" class="field" placeholder="Your E-Mail">
+                </div>
+                <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+                <span class="small-text">Get relevant information, unsubscribe at any time.</span>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- End Intro Cnt -->
+      {% endblock %}
+    </div>
+  </div>
+  <!-- End Intro -->
+{% endblock %}
+
+<form>
+
+<label for="id_email_field">E-mail:</label> <input type="email" name="email_field" required="" id="id_email_field">
+<button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>
+</form>

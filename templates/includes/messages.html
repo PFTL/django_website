@@ -1,5 +1,5 @@
 {% if messages %}
-    <div role="alertdialog">
+    <div class="alert alert-primary" role="alert">
         <ul class="messages">
             {% for message in messages %}
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %} role="alert">{{ message }}</li>
