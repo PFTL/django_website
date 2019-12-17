@@ -1,0 +1,15 @@
+{% if user.name %}
+Dear {{ user.name }},
+{% else %}
+Hello,
+{% endif %}
+
+We have received your request to join the newsletter {{ newsletter.title }}.
+Please, follow this link to confirm your subscription:
+
+{{ activation_link }}
+
+If it wasn't you who submitted the request, you can safely ignore this e-mail.
+
+Best regards,
+The Python For The Lab team.

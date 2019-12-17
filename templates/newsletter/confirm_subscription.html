@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Python For The Lab - Free Chapter{% endblock %}
+{% block content %}
+    <div class="pt-5 bg-primary big-header" id="courses-header">
+    <div class="container mb-3 pb-3">
+      <div class="row">
+        <div class="col-md-12 my-3 text-center align-self-center">
+          <h1 class="display-1 main-title">Python For The Lab</h1>
+          <h1 class="sub-title">Free chapter request</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-lg-6">
+          <p class="lead text-justify">We have received your request for a free chapter of Python For The Lab. Check your e-mail, as it should arrive any time now. If you have any problems, please contact us at:
+              aquiles@pythonforthelab.com</p>
+        </div>
+        <div class="col-lg-6 d-none d-md-block col-md-4" style="background-image: url('{{ SITEURL }}/theme/img/apple-desk-laptop-working_2.jpg');background-size:cover;background-repeat:no-repeat;background-position:right center;"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

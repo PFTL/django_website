@@ -1,0 +1,13 @@
+{% if user.name %}
+Dear {{ user.name }},
+{% else %}
+Hello,
+{% endif %}
+
+Please, find attached the free chapter of Python For The Lab.
+We hope you enjoy it, and if you would like to get the full book, you can visit:
+
+https://www.pythonforthelab.com/books/
+
+Best regards,
+The Python For The Lab team.

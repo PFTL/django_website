@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block intro %}{% include 'includes/header.html' %}{% endblock %}
+
 {% block css %}<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>{% endblock %}

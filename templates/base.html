@@ -57,10 +57,11 @@
   <link rel="stylesheet" href="{% static 'css/prism.css' %}"/>
   <link href="{% static 'css/vendor/font-awesome/css/all.min.css' %}" rel="stylesheet">
   {% block extra_css %}{% endblock extra_css %}
-
+  {% block extra_head_js %}{% endblock extra_head_js %}
 </head>
 <body>
 {% wagtailuserbar %}
+
 <!-- Wrapper -->
 <section class="wrapper {{ wrapper_class }}">
 
@@ -82,5 +83,6 @@
 {% block footer %}
   {% include "includes/footer.html" %}
 {% endblock %}
+{% block footer_js %}{% endblock footer_js %}
 </body>
 </html>

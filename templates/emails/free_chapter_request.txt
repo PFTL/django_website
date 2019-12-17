@@ -1,0 +1,16 @@
+{% if user.name %}
+Dear {{ user.name }},
+{% else %}
+Hello,
+{% endif %}
+
+We have received your request for a free chapter of Python For The Lab.
+Before getting it, we need to confirm it was you who requested it.
+Please follow the link below and you will receive the chapter immediately after
+
+{{ activation_link }}
+
+If it wasn't you who submitted the request, you can safely ignore this e-mail.
+
+Best regards,
+The Python For The Lab team.

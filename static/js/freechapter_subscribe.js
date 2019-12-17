@@ -1,14 +1,11 @@
 $(document).ready(function () {
   $('#free-chapter').submit(function (event) {
     event.preventDefault();
-
-    var email = {'email': $("#email").val()};
+    var data = $(this).serialize();
     $.ajax({
         type: "POST",
-        dataType: 'json',
-        contentType: 'application/json',
-        url: "https://uetke.uetke.com/free-chapter",
-        data: JSON.stringify(email),
+        url: "/free_chapter/",
+        data: data,
         beforeSend: function () {
           $("#send").prop("disabled", true);
           $("#send").text("Sending");

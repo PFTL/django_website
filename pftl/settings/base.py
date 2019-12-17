@@ -9,6 +9,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'base',
     'blog',
+    'free_chapter',
     'search',
 
     'wagtail.contrib.forms',
@@ -179,3 +180,4 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+DEFAULT_FROM_NAME = 'Aquiles Carattino'

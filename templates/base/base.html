@@ -18,7 +18,7 @@
           <div class="side-form small-sb-form">
             <div class="sb-form">
               <h4>Get all the information directly to your inbox</h4>
-              <form  enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
+              <form enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
                 {% csrf_token %}
                 <div class="field-wp">
                   <input type="email" name="email_field" class="field" placeholder="Your E-Mail">
@@ -35,9 +35,3 @@
   </div>
   <!-- End Intro -->
 {% endblock %}
-
-<form>
-
-<label for="id_email_field">E-mail:</label> <input type="email" name="email_field" required="" id="id_email_field">
-<button id="id_submit" name="submit" value="Subscribe" type="submit">Subscribe</button>
-</form>

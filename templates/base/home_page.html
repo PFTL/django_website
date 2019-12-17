@@ -44,9 +44,10 @@
                 any time.
             </div>
             <div class="form-cnt">
-                <form action="">
+                <form enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
+                  {% csrf_token %}
                     <div class="field-wp">
-                        <input type="email" class="field" placeholder="Your E-Mail">
+                        <input type="email" name="email_field" class="field" placeholder="Your E-Mail">
                     </div>
                     <input type="submit" class="subscribe-btn" value="Subscribe">
                 </form>
@@ -80,7 +81,7 @@
 
             <div class="articles-cnt">
                 {% if page.featured_section %}
-                    {% for article in page.featured_section.specific.children|slice:":3" %}
+                    {% for article in feature_section_articles %}
                         <div class="article {% if forloop.counter == 1 %}big{% endif %}">
                             <span class="image">{% image article.image width-544 %}</span>
                             <span class="date">{{ article.date_published }}</span>

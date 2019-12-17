@@ -1,5 +1,13 @@
 {% extends 'base/base.html' %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags static %}
+{% block extra_head_js %}
+<script
+    id="fsc-api"
+    src="https://d1f8f9xcsvx3ha.cloudfront.net/sbl/0.7.5/fastspring-builder.min.js"
+    type="text/javascript"
+    data-storefront="pythonforthelab.onfastspring.com/popup-pftl-book">
+</script>
+{% endblock %}
 {% block intro_cnt %}{% endblock %}
 {% block head-extra %}
     <div class="container">
@@ -16,21 +24,26 @@
     <div class="container">
         <div class="main-cnt book">
             <span class="book-item">Book</span>
-            <a href="#" class="button">Get the Book Only for $15</a>
+            <a href="#" class="button" data-fsc-action="Add,Checkout" data-fsc-item-path-value="python-for-the-lab-book">Get the book, only for 15U$</a>
             <div class="chapter-box">
                 <div class="title">
                     Get a free sample chapter
                 </div>
                 <div class="box-cnt">
                     <p>Enter your e-mail and you will get a sample chapter in your inbox</p>
-                    <form action="">
+                    <form action="/free_chapter" method="post" id="free-chapter">
+                      {% csrf_token %}
                         <div class="field-wp">
-                            <input type="text" class="field" placeholder="Your E-Mail">
+                            <input type="email" name="email" class="field" id="email" placeholder="Your E-Mail">
                         </div>
+                        <div id="newsletter_feedback"></div>
                         <input type="submit" class="send-btn" value="Get the free chapter">
                     </form>
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+{% block footer_js %}
+<script src="{% static 'js/freechapter_subscribe.js' %}"></script>
 {% endblock %}
