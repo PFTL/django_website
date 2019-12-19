@@ -62,7 +62,6 @@ class FreeChapter(models.Model):
         msg.attach_file(os.path.join(settings.BASE_DIR, 'uploads/sample_chapter.pdf'))
 
         msg.send()
-        print(msg)
         self.ip_confirmation = ip_address
         self.date_sent = now()
         self.save()

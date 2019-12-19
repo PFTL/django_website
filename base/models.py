@@ -103,6 +103,14 @@ class BooksPage(BasePage):
         return context
 
 
+class CoursePage(BasePage):
+    def get_context(self, request):
+        context = super(BasePage, self).get_context(request)
+        context['intro_class'] = 'about book'
+        context['wrapper_class']= ''
+        return context
+
+
 class HomePage(Page):
     """ Home Page, needs to respect the sections available in the template.
     """
