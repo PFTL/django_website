@@ -1,0 +1,10 @@
+{% extends "newsletter/common.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Newsletter subscribe" %}{% endblock head_title %}
+
+{% block content %}
+  <span class="login100-form-title p-b-32">{% trans "Newsletter subscribe" %} {{ newsletter.title }}</span>
+
+  <p>{% trans "Your subscription request was successfully received and an activation email has been sent to you. In that email you will find a link which you need to follow in order to activate your subscription." %}</p>
+{% endblock content %}

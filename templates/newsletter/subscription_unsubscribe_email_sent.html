@@ -1,0 +1,10 @@
+{% extends "newsletter/common.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Newsletter unsubscribe" %}{% endblock head_title %}
+
+{% block content %}
+  <span class="login100-form-title p-b-32">{% trans "Newsletter unsubscribe" %} {{ newsletter.title }}</span>
+
+  <p>{% trans "Your unsubscription request has successfully been received. An email has been sent to you with a link you need to follow in order to confirm your unsubscription." %}</p>
+{% endblock content %}
