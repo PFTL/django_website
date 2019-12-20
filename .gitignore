@@ -3,3 +3,4 @@ production.py
 __pycache__/
 media/
 *.sqlite3
+uploads/
