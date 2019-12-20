@@ -5,71 +5,20 @@
 {% endblock %}
 {% block intro_cnt %}{% endblock %}
 {% block head-extra %}
-  <div class="container">
-    <div class="about-cnt book">
-      <h2>Courses: Python For The Lab</h2>
-      <p>Intensive 3-day courses for researchers to learn how to build their own software solutions.</p>
-      <p>From developing a driver to building a complete user interface, you will learn all the best practices you need
-        to kickstart your software development journey using real-world devices.</p>
-      <p>Contact us at <a href="mailto:courses@pythonforthelab.com">courses@pythonforthelab.com</a> to get more
-        information.
-      </p>
-    </div>
+  <div class="about-cnt ab">
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.introduction }}</p>
+    {% if page.image %}
+      <div class="image-item">
+        {% image page.image fill-400x400 %}
+      </div>
+    {% endif %}
   </div>
 {% endblock %}
 {% block content %}
-  <div class="container">
-    <div class="main-cnt book">
-      <span class="book-item">Courses</span>
-      <div class="chapter-box">
-        <div class="title">
-          About the Courses
-        </div>
-        <div class="box-cnt">
-          The courses take 3-full days and are aimed at small groups of up to 7 people. Our courses are ideal for young
-          Ph.D. candidates and postdocs who want to gain control of their own experiments. We are strongly committed to
-          the idea that software should enhance the capabilities of hardware and not the other way around.
-        </div>
-        <div class="box-cnt">
-          <h3>Target audience</h3>
-          We don't require specific programming knowledge to follow the course. If you have a bit of background with
-          Python, Matlab or any other language, understand what an if-statement is, and how a for-loop works, then you
-          are ready to follow the workshops.
-        </div>
-        <div class="box-cnt">
-          <h3>Are you interested?</h3>
-          Drop us a line to <a href="mailto:courses@pythonforthelab.com">courses@pythonforthelab.com</a> with your
-          questions and we will come back to you as soon as possible. We offer special discounts for universities and
-          public institutions.
-        </div>
-        <div class="box-cnt">
-          <h3>Previous experiences</h3>
-
-          <blockquote class="blockquote"><p class="mb-0">Excellent course, self-contained and, in my opinion, a great
-            stepping stone to find your way to do
-            instrumentation with Python. I loved the hands-on approach with a simple REAL device that gives you the
-            insights (and experience) into the typical problems you encounter when doing instrumentation for the lab. It
-            is very valuable that the trainer shares specific tips and tricks that come from a vast experience in this
-            field. A total must for a researcher who wants to design new tools and experiments.</p>
-            <footer class="blockquote-footer">Martín Caldarola <cite title="Source Title">Postdoc Researcher at Delft
-              University</cite>
-            </footer>
-          </blockquote>
-          <blockquote class="blockquote"><p class="mb-0">It provides an excellent basis to further develop skills in
-            this area.</p>
-            <footer class="blockquote-footer">PhD Candidate <cite title="Source Title">at Leiden University</cite>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="box-cnt">
-          <h3>Custom courses</h3>
-          Are you looking for a tailor-made solution for your research group or institution, then drop us a line! We are
-          always eager to discuss about the possibilities of building custom solutions for your own needs.
-        </div>
-      </div>
-    </div>
+  <div class="main-cnt ab">
+    {% for block in page.body %}
+      {{ block }}
+    {% endfor %}
   </div>
-{% endblock %}
-{% block footer_js %}
-  <script src="{% static 'js/freechapter_subscribe.js' %}"></script>
 {% endblock %}
