@@ -11,6 +11,7 @@ INSTALLED_APPS = [
     'blog',
     'free_chapter',
     'search',
+    'crispy_forms',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -180,4 +181,16 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Python for the Lab]"
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_USERNAME_REQUIRED = False
+
 DEFAULT_FROM_NAME = 'Aquiles Carattino'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+LOGIN_REDIRECT_URL = '/'
