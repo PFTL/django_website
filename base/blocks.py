@@ -18,6 +18,18 @@ class ImageBlock(StructBlock):
         template = "blocks/image_block.html"
 
 
+class BlogBodyBlock(StructBlock):
+    """
+    Custom `StructBlock` to organize blog articles' bodies into sections, each with a title, used to create a TOC
+    """
+    title = CharBlock(required=False)
+    content = MarkdownBlock(required=False)
+
+    class Meta:
+        icon = 'fa-paragraph'
+        templates = 'blocks/blog_body_block.html'
+
+
 class HeadingBlock(StructBlock):
     """
     Custom `StructBlock` that allows the user to select h2 - h4 sizes for headers
