@@ -1,0 +1,61 @@
+server {
+
+        root /home/pftl_blog/output;
+        index index.html index.htm;
+
+        server_name www.pythonforthelab.com;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+        location /comments {
+            root /home/pftl_comments;
+        }
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/www.pythonforthelab.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/www.pythonforthelab.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    access_log /etc/nginx/logs/pftl-access.log ;
+}
+server {
+    if ($host = www.pythonforthelab.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+        listen 80;
+        listen [::]:80;
+
+        server_name www.pythonforthelab.com;
+    return 404; # managed by Certbot
+
+}
+
+server {
+    listen 80;
+    listen 443;
+    server_name pythonforthelab.com;
+    return 301 https://www.pythonforthelab.com$request_uri;
+}
+
+server {
+    listen 80;
+    listen 443;
+    server_name test.pythonforthelab.com;
+    location /static/ {
+        alias /webapps/pftl/static_assets/;
+    }
+
+    location /media/ {
+        alias /webapps/pftl/media_assets/;
+    }
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/webapps/pftl/run/gunicorn.sock;
+    }
+    access_log /webapps/pftl/logs/access_log.log;
+    error_log /webapps/pftl/logs/error_log.log;
+}
