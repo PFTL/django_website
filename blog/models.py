@@ -12,8 +12,8 @@ from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
-
-from base.blocks import BaseStreamBlock
+from wagtailmarkdown.edit_handlers import MarkdownPanel
+from wagtailmarkdown.fields import MarkdownField
 
 
 class BlogPeopleRelationship(Orderable, models.Model):
@@ -40,9 +40,9 @@ class BlogPageTag(TaggedItemBase):
 class BlogPage(Page):
     """ This is the core of the Blog app. BlogPage are individual articles
     """
-    introduction = models.TextField(
-        help_text='Text before the TOC',
-        blank=True)
+    subtitle = models.CharField(blank=True, max_length=255)
+
+    body = MarkdownField(blank=True)
 
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -58,11 +58,6 @@ class BlogPage(Page):
         null=True,
         help_text='Information about the header image, to appear after the article')
 
-    body = StreamField(
-        BaseStreamBlock(), verbose_name="Page body", blank=True
-    )
-
-    subtitle = models.CharField(blank=True, max_length=255)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     date_published = models.DateField(
         "Date article published", blank=True, null=True
@@ -71,9 +66,8 @@ class BlogPage(Page):
     allow_comments = models.BooleanField(default=True)
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
-        FieldPanel('subtitle', classname="full"),
-        FieldPanel('introduction'),
+        FieldPanel('subtitle'),
+        MarkdownPanel('body'),
         ImageChooserPanel('image'),
         FieldPanel('image_data'),
         FieldPanel('date_published'),
