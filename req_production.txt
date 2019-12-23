@@ -10,7 +10,7 @@ django-contrib-comments==1.9.2
 django-crispy-forms==1.8.1
 django-debug-toolbar==2.1
 django-modelcluster==5.0
--e git://github.com/aquilesC/django-newsletter.git@7b763554473816b503f347bde10a2fae12503d43#egg=django_newsletter
+git+git://github.com/aquilesC/django-newsletter.git@7b763554473816b503f347bde10a2fae12503d43#egg=django_newsletter
 django-taggit==1.1.0
 django-treebeard==4.3
 djangorestframework==3.11.0
@@ -36,7 +36,7 @@ unicodecsv==0.14.1
 Unidecode==1.1.1
 urllib3==1.25.7
 wagtail==2.7
--e git+git@github.com:aquilesC/wagtail-markdown.git@c91a509a445a71616ed659fea3cf047b0f1e92cd#egg=wagtail_markdown
+git+git://github.com/aquilesC/wagtail-markdown.git@c91a509a445a71616ed659fea3cf047b0f1e92cd#egg=wagtail_markdown
 wagtailfontawesome==1.1.4
 webencodings==0.5.1
 Willow==1.3

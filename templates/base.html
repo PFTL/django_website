@@ -1,4 +1,4 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar wagtailimages_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +33,62 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'css/favicon/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static 'css/favicon/manifest.json' %}">
 
-  <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">
+  <meta name="description" content="
+    {% if self.search_description %}
+      {{ self.search_description }}
+      {% elif self.subtitle %}
+      {{ self.subtitle }}
+{% endif %}">
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{{ self.title }}">
+  <meta itemprop="description" content="
+    {% if self.search_description %}
+      {{ self.search_description }}
+      {% elif self.subtitle %}
+      {{ self.subtitle }}
+{% endif %}">
+  {% if self.image %}
+    {% image self.image width-500 as head_image %}
+    <meta itemprop="image" content="{{ head_image.url }}">
+  {% endif %}
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:site" content="@pftl3"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{{ self.title }}"/>
+  {% if self.image %}
+  <meta name="twitter:image" content="{{ head_image.url }}"/>
+  {% endif %}
+    <meta name="twitter:description" content="{% if self.search_description %}
+      {{ self.search_description }}
+      {% elif self.subtitle %}
+      {{ self.subtitle }}
+{% endif %}">
+
+  <meta name="twitter:creator" content="@_aquic_"/>
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+{% if self.image %}
+  <meta name="twitter:image:src" content="{{ head_image.url }}">
+{% endif %}
+
+  <!-- Open Graph data -->
+    <meta property="og:url" content="{{ self.url }}"/>
+    <meta property="og:title" content="{{ self.title }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="{% if self.search_description %}
+      {{ self.search_description }}
+      {% elif self.subtitle %}
+      {{ self.subtitle }}
+{% endif %}"/>
+{% if self.image %}
+    <meta property="og:image" content="{{ head_image.url }}"/>
+{% endif %}
+    <meta property="og:site_name" content="Python For The Lab"/>
+
+    <link rel="canonical" href="{{ self.url }}"/>
+  <meta name="author" content="Aquiles Carattino">
+
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="css/favicon/ms-icon-144x144.png' %}">
   <meta name="theme-color" content="#ffffff">
