@@ -10,7 +10,7 @@ django-contrib-comments==1.9.2
 django-crispy-forms==1.8.1
 django-debug-toolbar==2.1
 django-modelcluster==5.0
--e git+git@github.com:aquilesC/django-newsletter.git@30c3ec3f3bea93b22c6640aed40ee2c8040a4f46#egg=django_newsletter
+-e git://github.com/aquilesC/django-newsletter.git@7b763554473816b503f347bde10a2fae12503d43#egg=django_newsletter
 django-taggit==1.1.0
 django-treebeard==4.3
 djangorestframework==3.11.0
