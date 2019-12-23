@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
     'allauth',
     'allauth.account',
@@ -173,7 +174,6 @@ COMMENTS_XTD_FROM_EMAIL = "noreply@example.com"
 # Contact mail address to show in messages.
 COMMENTS_XTD_CONTACT_EMAIL = "helpdesk@example.com"
 
-
 ## AUTHENTICATION
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -196,3 +196,5 @@ ACCOUNT_USERNAME_REQUIRED = False
 DEFAULT_FROM_NAME = 'Aquiles Carattino'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_REDIRECT_URL = '/'
+
+WAGTAILMARKDOWN_EXTENSIONS = ['toc', ]

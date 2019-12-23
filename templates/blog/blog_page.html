@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-{% load wagtailimages_tags wagtailcore_tags %}
+{% load wagtailimages_tags wagtailcore_tags wagtailmarkdown %}
 {% load comments comments_xtd %}
 {% block content %}
     <div class="container">
@@ -22,7 +22,6 @@
                         <span class="item-tag {% if forloop.counter == 1 %}first{% endif %}">{{ tag }}</span>
                     {% endfor %}
                 </div>
-                <p>{{ page.introduction }}</p>
                 {#                        <div class="toc">#}
                 {#                            <div class="title">List of Contents</div>#}
                 {#                            <ul>#}
@@ -59,9 +58,7 @@
                 {#                                </li>#}
                 {#                            </ul>#}
                 {#                        </div>#}
-                {% for block in page.body %}
-                    {{ block }}
-                {% endfor %}
+                {{ self.body|markdown }}
                 <div class="info-list">
                     <span class="item author">Article written by {{ page.first_author }}</span>
                     {% if page.image_data %}

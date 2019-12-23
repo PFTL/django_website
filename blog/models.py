@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db import models
@@ -14,6 +15,7 @@ from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtailmarkdown.edit_handlers import MarkdownPanel
 from wagtailmarkdown.fields import MarkdownField
+from wagtailmarkdown.utils import render_markdown
 
 
 class BlogPeopleRelationship(Orderable, models.Model):
@@ -135,8 +137,18 @@ class BlogPage(Page):
         context['intro_class'] = 'blog article'
         return context
 
+    @property
+    def introduction(self):
+        html = render_markdown(self.body)
+        soup = BeautifulSoup(html, "html.parser")
+        try:
+            introduction = soup.find('p').text
+            return introduction
+        except AttributeError:
+            return None
+
     class Meta:
-        ordering = ['date_published']
+        ordering = ['-date_published']
 
 
 class BlogIndexPage(RoutablePageMixin, Page):
