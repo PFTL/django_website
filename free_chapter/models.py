@@ -1,4 +1,5 @@
 import hashlib
+import logging
 import os
 
 from django.conf import settings
@@ -7,6 +8,7 @@ from django.db import models
 from django.template.loader import render_to_string
 from django.utils.timezone import now
 
+logger = logging.getLogger(__name__)
 
 class People(models.Model):
     """ Basic information of the recipients of the messages. It stores the date joined, email and name. It also
@@ -47,8 +49,10 @@ class FreeChapter(models.Model):
         msg = EmailMultiAlternatives(subject, mail_text, email_from, [self.user.email],
                                      reply_to=[settings.DEFAULT_FROM_EMAIL])
         msg.send()
+        logger.info(f'Sent free chapter confirmation to {self.user.email}')
         self.ip_request = ip_address
         self.save()
+
 
     def send_free_chapter(self, ip_address):
         context = dict(
@@ -62,6 +66,7 @@ class FreeChapter(models.Model):
         msg.attach_file(os.path.join(settings.BASE_DIR, 'uploads/sample_chapter.pdf'))
 
         msg.send()
+        logger.info(f'Sent free chapter to {self.user.email}')
         self.ip_confirmation = ip_address
         self.date_sent = now()
         self.save()
