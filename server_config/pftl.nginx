@@ -13,6 +13,10 @@ server {
         alias /webapps/pftl/static_assets/robots.txt;
     }
 
+    location /favicon.ico {
+        alias /webapps/pftl/static_assets/favicon.ico;
+    }
+
     location / {
         include proxy_params;
         proxy_pass http://unix:/webapps/pftl/run/gunicorn.sock;
@@ -21,7 +25,7 @@ server {
     access_log /webapps/pftl/logs/access_log.log;
     error_log /webapps/pftl/logs/error_log.log;
 
-    error_page 404 /
+    error_page 404 /;
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
     listen 443 ssl; # managed by Certbot

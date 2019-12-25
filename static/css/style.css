@@ -317,7 +317,10 @@ strong { font-weight: 700; }
 	.intro.article .intro-cnt.v-article { padding-bottom: 25%; }
 }
 
-
+.intro.privacy { position: relative; background: #ff6150; }
+.intro.privacy .logo { background-image: url(images/logo-dark.svg); }
+.intro.cookie { position: relative; background: #ff6150; }
+.intro.cookie .logo { background-image: url(images/logo-dark.svg); }
 /* Intro About */
 .intro.about { position: relative; background: #ff6150; }
 .intro.about .logo { background-image: url(images/logo-dark.svg); }
