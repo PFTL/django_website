@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
@@ -28,7 +29,7 @@ urlpatterns = [
 
     path('free_chapter/', RequestFreeChapter.as_view(), name='request-free-chapter'),
     path('confirm/<str:secret_code>', ConfirmFreeChapter.as_view(), name='confirm-free-chapter'),
-
+    path('courses', TemplateView.as_view(template_name='courses/index.html'), name='courses'),
     url('^sitemap\.xml$', sitemap),
     url(r'feed\.rss$', BlogsFeed(), name='feed'),
 
