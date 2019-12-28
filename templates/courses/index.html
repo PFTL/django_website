@@ -1,1 +1,181 @@
 {% extends "courses/base.html" %}
+{% load static %}
+{% block body %}
+  <!-- Header -->
+  <header class="header mb-3" style="background-image: url({% static 'courses/4.jpg' %})">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="fw-200 mb-6">Python for the Lab Courses</h1>
+          <p class="lead-2">Kick-start your Python development journey by following one of our highly specialized
+            workshops. From introductory to advanced topics, we have you covered</p>
+
+          <hr class="w-50px ml-0">
+
+          <a class="text-muted" href="#courses">Explore our courses</a>
+        </div>
+      </div>
+    </div>
+  </header><!-- /.header -->
+  <section class="section bg-gradient-info">
+    <div class="container">
+      <header class="section-header"><h2>Our Courses</h2></header>
+      <div class="row" id="courses">
+        <div class="col-md-4 mx-auto">
+          <div class="card card-body text-center shadow-1 hover-shadow-6 py-6">
+            <p class="lead text-dark text-uppercase fw-600 ls-1 mb-0">Python for the Lab</p>
+            <p class="text-lighter">Introductory Course</p>
+            <p class="lead-3">Learn how to get started with Python to control the devices in your lab.</p>
+            <p class="lead-2">
+              You will get a custom built acquisition card and go step by step from writing your first driver to
+              learning about programming patterns to building a GUI.
+            </p>
+            <p class="lead-1">No special requirements are needed to follow this course, just a basic understanding of
+              programming.</p>
+            <div><a class="btn btn-round btn-secondary w-200" href="{% url 'course-pftl' %}">Learn more</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mx-auto">
+          <div class="card card-body text-center shadow-1 hover-shadow-6 py-6">
+            <p class="lead text-dark text-uppercase fw-600 ls-1 mb-0">Python for Scientists</p>
+            <p class="text-lighter">Introductory Course</p>
+            <p class="lead-3">Everything a scientist needs to know to get started with Python</p>
+            <p class="lead-2">Hands-on course in which you will go from from reading data from a file to generating
+              plots that can be used in a paper.
+            </p>
+            <p class="lead-1">We cover all the best practices needed to ensure reproducibility, easy sharing of code
+              with colleagues and more.</p>
+            <div><a class="btn btn-round btn-secondary w-200" href="{% url 'course-pfs' %}">Learn more</a></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mx-auto">
+          <div class="card card-body text-center shadow-3 hover-shadow-6 py-6">
+            <p class="lead text-dark text-uppercase fw-600 ls-1 mb-0">Advanced Python for the Lab</p>
+            <p class="text-lighter">Advanced Course</p>
+            <p class="lead-3">Bring your code to the next level, document, distribute, parallelize.</p>
+            <p class="lead-2">In this workshop your skills will reach new levels. We will focus into advanced topics,
+              including documentation, multi-threading, fast acquisition and more.
+            </p>
+            <p class="lead-1">You will acquire data from a camera at high frame rates, while you will be able to analyze
+              and stream data to hard drive in real time.</p>
+            <p>This workshop is intended only for people with a solid knowledge of Python, preferably who followed the
+              introductory course.</p>
+            <div><a class="btn btn-round btn-secondary w-200" href="{% url 'course-advanced-pftl' %}">Learn more</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <header class="section-header"><h2>About our Courses</h2></header>
+      <div class="row gap-y">
+        <div class="col-md-6 col-xl-4">
+          <div class="media">
+            <div class="lead-6 line-height-1 text-dark w-70px"><i class="icon-linegraph"></i></div>
+            <div class="media-body">
+              <h5>Increase your Productivity</h5>
+              <p>Learn how to automatize tasks in the lab and in the office. Prepare to design out-of-the-box
+                experiments and anlysis.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4">
+          <div class="media">
+            <div class="lead-6 line-height-1 text-primary w-70px"><i class="icon-gears"></i></div>
+            <div class="media-body">
+              <h5>Tailor Made</h5>
+              <p>We can tailor our courses to your own specific needs. Think about analyzing your own data, controlling
+                your own devices.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-xl-4">
+          <div class="media">
+            <div class="lead-6 line-height-1 text-info w-70px"><i class="icon-beaker"></i></div>
+            <div class="media-body">
+              <h5>By Scientists for Scientists</h5>
+              <p>Our courses are designed by scientists, who work in the lab, who publish papers, who understand
+                you.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="media">
+            <div class="lead-6 line-height-1 text-warning w-70px"><i class="icon-layers"></i></div>
+            <div class="media-body">
+              <h5>Reproducible Research</h5>
+              <p>Better code is the first step to reproducible science, learn how you can leverage the available
+                tools.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="media">
+            <div class="lead-6 line-height-1 text-danger w-70px"><i class="icon-recycle"></i></div>
+            <div class="media-body">
+              <h5>Reusable Code</h5>
+              <p>Learn how to develop code that can be used by others.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="media">
+            <div class="lead-6 line-height-1 text-success w-70px"><i class="icon-chat"></i></div>
+            <div class="media-body">
+              <h5>Community</h5>
+              <p>Join an ever growing community of Python Developers, check <a href="https://forum.pythonforthelab.com">our
+                forum</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <header><h2>Contact us</h2></header>
+      <p class="lead">If you are interested in the courses, or have any doubts, please send us an e-mail to
+        <mark>courses@pythonforthelab.com</mark>
+        and we will be glad to answer all your questions.
+      </p>
+    </div>
+  </section>
+  <section class="section bg-gray">
+    <div class="container">
+      <header class="section-header"><h2>More about the courses</h2></header>
+      <div class="row">
+        <header class="header-title"><h3>Anywhere in Europe</h3></header>
+        <p class="lead">
+          Python for The Lab courses can be organized anywhere in Europe. If you are a group of at least 5 people who
+          want to follow any of the 3-day workshops, contact us.</p>
+
+        <p class="lead">We offer special packages for institutions willing to organize workshops for larger groups or
+          that want to combine more than one of the trainings. Contact us at
+          <mark>courses@pythonforthelab.com</mark>
+          to receive further information.
+        </p>
+        <p class="lead"><b>Outside of Europe?</b>, contact us and we will see what the options are. The main difficulty
+          of organizing workshops in different parts of the world is the time and cost that implies traveling, but we
+          are always open to discussions.</p>
+      </div>
+      <div class="row">
+        <header class="header-title"><h3>Target audience</h3></header>
+        <p class="lead">Our target audience are young scientists who want to bring their research to the next level. We
+          have organized courses in several universities and companies around Europe. <b>Python for the Lab</b> and <b>Advanced
+            Python for the Lab</b> are targeted towards experimentalists who want to learn how to control their setups.
+          Both courses are hands-on, and by the end you will have a working program that can be used as template.
+        </p>
+        <p class="lead"><b>Python for Scientists</b> aims at showing the best practices on how to analyze data. We cover
+          the entire workflow from reading data from the hard drive to generating a plot that can be used in a paper. We
+          will use real data, coming from different open-sourced data sets of papers.</p>
+      </div>
+    </div>
+  </section>
+{% endblock body %}

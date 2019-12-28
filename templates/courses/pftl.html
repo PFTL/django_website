@@ -1,0 +1,149 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+{% block body %}
+  <!-- Header -->
+  <header class="header text-white bg-dark pt-9 pb-5"
+          style="background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);">
+    <div class="container">
+      <h1>Python for the Lab</h1>
+      <p class="lead">The definitive introduction course for scientists working in the lab</p>
+    </div>
+  </header><!-- /.header -->
+  <main class="main-content">
+    <nav class="bb-1 bg-gray" aria-label="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb px-0">
+          <li class="breadcrumb-item"><a href="{% url 'courses' %}">Courses</a></li>
+          <li class="breadcrumb-item">Python for the Lab</li>
+        </ol>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-xl-8 mr-md-auto py-8">
+          <article>
+            <p>
+              The Python for the Lab course is designed to show that anybody can build software for the
+              lab. In this intensive <b>3-day</b> course we will cover various topics, from the basics of communicating
+              with a device, developing drivers, to building user interfaces.
+            </p>
+            <p>
+              Developing control software for labs with Python is becoming ubiquitous in all major research institutions
+              around the world. Learn from examples, with real devices and measurements. The course Python for the Lab
+              is aimed at small groups of up to 7 people, in order to deliver personalized content to every attendant.
+            </p>
+            <p>
+              Python for the lab was designed to make it attractive to scientists working on experiments, who are
+              willing to automatize repetitive tasks, or want to build software to control entire setups. Participants
+              receive a custom-made acquisition card which will be used as an example device on which software will be
+              developed, including a user interface, and a real experiment will be performed.
+            </p>
+            <p>
+              Do you like what you read, then drop us a line to
+              <mark>courses@pythonforthelab.com</mark>
+              and we will glad to clarify any of your doubts. This course is offered to groups of up to 7 people in
+              order to keep a balanced instructor/student ratio.
+            </p>
+            <h3 id="about" data-provide="anchor">About the Course</h3>
+            <h6>Intended audience</h6>
+            <p>
+              The workshop is aimed at young scientists willing to learn how to control devices and automatize tasks in
+              the lab. <b>Prerequisite</b>: working knowledge of a programming language such as Matlab, Python, C, etc.
+              Participants should understand the basics of computer programming, such as for-loops, if-statements, etc.
+              The workshop is designed to be hands-on since the beginning, performing measurements with a real device.
+              The idea is to give attendees the basic tools to start their own projects, not only in terms of selection
+              of libraries, but also in terms of decisions that will ensure that programs are sustainable in the longer
+              term.
+            </p>
+            <h6>Technology Stack</h6>
+            <p>We will use Python as the programming language and will rely on known libraries such as numpy to do some
+              basic data manipulation. PyQt5 will be used to build user interfaces, and PyQtGraph to do real-time plots
+              of a signal. We will discuss about specific libraries for interfacing with instruments, such as pyVISA,
+              pySerial, and frameworks such as Lantz, which are normally not covered in any other workshops. We will use
+              PyCharm as the Python editor and QtDesigner for building user interfaces.</p>
+            <h6>Requisites &amp; Duration</h6>
+            <p>In order to follow the workshop, you will need to bring a laptop with any operating system you normally
+              use and with which you feel comfortable. The acquisition device, which will be provided by the instructor,
+              is USB2 compatible, therefore it works with any PC. One week prior to the workshop you will receive
+              instructions to install the needed software. </p>
+            <p>The workshop demands 3 consecutive full days. Time can be
+              adapted according the group dynamics, and some topics such as introduction to version control,
+              distribution of packages, etc. can be included based on attendees’ experience and interests. Certificates
+              of completion are given upon completion of the workshop.</p>
+            <h6>About the Instructor</h6>
+            <p>Aquiles Carattino completed his PhD in experimental Physics in 2017. During this period, he started
+              developing software for his own experiments, and in 2017 founded a company to develop software for
+              research labs. By the end of 2017 he created pythonforthelab.com and started offering workshops aiming at
+              creating a strong community of python developers around common technologies and practices. In early 2019,
+              Aquiles and some partners founded a new company to develop the next generation of nanoparticle tracking
+              devices, which are planned to be released to the market in early 2020.</p>
+            <h3 id="syllabus" data-provide="anchor">Detailed Syllabus</h3>
+            <div class="col-12">
+              <ol class="step">
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">1</span>
+                  </div>
+
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Very quick introduction to Python, with special focus on class definition and application.
+                      Introduction to the device to be used during the course.</p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Development of the driver. Discussion about timing, debugging, and general problem solving.</p>
+                  </div>
+                </li>
+
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">2</span>
+                  </div>
+
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Expanding the code to make it reusable and easy to share. Learning about the MVC design pattern
+                      and its implications on software for hardware and the lab</p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Introduction to <b>PyQt</b>, building the first user interface for the experiment. Learning why
+                      the MVC patter is so useful in these scenario. Exploring QtDesigner.</p>
+                  </div>
+                </li>
+
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">3</span>
+                  </div>
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Introduction to threads, signals and slots to produce a fluid user interface. Plotting data in
+                      real-time thanks to <b>PyQtGraph</b></p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Polishing details of the program. Improving how to save data and metadata in order to repeat
+                      measurements. Time to answer questions, show how to navigate the documentation of Qt, etc.</p>
+
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article>
+            <header class="header-title"><h2>Contact Us</h2></header>
+            <p class="lead">
+            If you want to learn more, send us an e-mail to
+            <mark>courses@pythonforthelab.com</mark>
+            with any questions or remarks. We will happy to answer them!</p>
+          </article>
+        </div>
+        <div class="col-md-4 col-xl-3 d-none d-md-block">
+          <aside class="sidebar sidebar-sticky">
+            <h6 class="sidebar-title">Python for the lab</h6>
+            <nav id="nav-scrollspy" class="nav flex-column">
+              <a class="nav-link" href="#about">About the Course</a>
+              <a class="nav-link" href="#syllabus">Detailed Syllabus</a>
+            </nav>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

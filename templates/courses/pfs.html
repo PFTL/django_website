@@ -1,0 +1,176 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+{% block body %}
+  <!-- Header -->
+  <header class="header text-white bg-dark pt-9 pb-5"
+          style="background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);">
+    <div class="container">
+      <h1>Python for Scientists</h1>
+      <p class="lead">Introduction to Python, to Scientists by Scientists</p>
+    </div>
+  </header><!-- /.header -->
+  <main class="main-content">
+    <nav class="bb-1 bg-gray" aria-label="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb px-0">
+          <li class="breadcrumb-item"><a href="{% url 'courses' %}">Courses</a></li>
+          <li class="breadcrumb-item">Python for Scientists</li>
+        </ol>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-xl-8 mr-md-auto py-8">
+          <article>
+            <p>
+              When it comes to programming, many scientists feel the frustration of not knowing how to get started to
+              improve their efficiency. That is why we decided to build <b>Python for Scientists</b>, a hands-on course
+              in which students will be exposed to all the tools they need to successfully start building solutions in
+              Python.
+            </p>
+            <p>
+              This course focuses into the entire workflow that needs to be followed to analyse data. We start by
+              reading files from the hard drive, covering reduction, calibration of signals, etc. Finally, we will
+              generate plots that can be used in a publication. With this simple approach, the students will be
+              challenged to improve on what they know and the way they work.
+            </p>
+            <p>This is a non BS course. You will not become a programmer after a couple of days, you will become a
+              scientists who can program. We will not focus on learning obscure Python tools, nor algorithms to find the
+              roots of an equation. We are going to focus on the practices you need to follow to analyse your data,
+              generate figures, and share the process with others.</p>
+            <p>
+              Do you like what you read, then drop us a line to
+              <mark>courses@pythonforthelab.com</mark>
+              and we will glad to clarify any of your doubts. This course is offered to groups of up to 7 people in
+              order to keep a balanced instructor/student ratio.
+            </p>
+            <h3 id="about" data-provide="anchor">About the Course</h3>
+            <h6>Intended audience</h6>
+            <p>
+              The workshop is aimed at young scientists willing to learn how to analyse the data they generate in a
+              systematic and reliable way. <b>Prerequisite</b>: The only requisite to follow the course is to be smart.
+              If you are already acquainted with a programming language, or with Python itself, then you will be able to
+              focus on the challenges of the workshop regarding the data at hand. If you are a complete beginner, you
+              will find our approach very easy to catch up.
+            </p>
+            <h6>Technology Stack</h6>
+            <p>Python comes in many flavors, we will use a distribution called <b>Anaconda</b> which bundles all the
+              basic libraries that a scientists needs. We will use <b>Jupyter Notebooks</b> to analyze data, and we will
+              use standard libraries for data manipulation, such as <b>numpy</b>, <b>scipy</b>, and <b>Pandas</b>. We
+              will use <b>Matplotlib</b> to generate professional figures which can be used in a publication.</p>
+            <h6>Requisites</h6>
+            <p>
+              In order to follow the workshop, you will need to bring a laptop with any operating system you normally
+              use and with which you feel comfortable. You will receive installation instructions prior to the start of
+              the course in order to prepare your development environment.
+            </p>
+            <h6>Duration</h6>
+            <p>The workshop is offered in two different formats: <b>3 or 5 consecutive full-days</b>. The 3-day course
+              offers the basic tools a scientist needs when analysing data, and this time will also be used to learn
+              about Python's syntax and best practices.</p>
+            <p>In the <b>5 days</b> course, participants will also be introduced to other tools which are very handy to
+              distribute code, including <b>Pycharm</b> and <b>Github</b>.</p>
+            <p>In both cases, time can be adapted according the group dynamics and background. Biologists will focus on
+              biologically-relevant data, but also chemists, physicists, etc. This will keep a high-level of engagement
+              with the audience. Depending on the background of the group, there is always room for including extra
+              topics. Certificates of completion are given upon completion of the workshop.</p>
+            <h6>About the Instructor</h6>
+            <p>Aquiles Carattino completed his PhD in experimental Physics in 2017. During this period, he started
+              developing software for his own experiments, and in 2017 founded a company to develop software for
+              research labs. By the end of 2017 he created pythonforthelab.com and started offering workshops aiming at
+              creating a strong community of python developers around common technologies and practices. In early 2019,
+              Aquiles and some partners founded a new company to develop the next generation of nanoparticle tracking
+              devices, which are planned to be released to the market in early 2020.</p>
+            <h3 id="syllabus" data-provide="anchor">Detailed Syllabus</h3>
+            <div class="col-12">
+              <ol class="step">
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">1</span>
+                  </div>
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Getting started with <b>Jupyter Lab</b>. We will quickly see how to use this powerful tool, and
+                      will use the opportunity to learn the basics of Python's syntax</p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Reading data from files, exploring the information. We will learn how to fit the data to a model
+                      and see how to iterate the process over many files automatically. We will see how to plot the
+                      information in order to visualize what we are doing.</p>
+                  </div>
+                </li>
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">2</span>
+                  </div>
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Using pandas to simplify working with tabular data. Learn to load and save data to further
+                      process or share. Learn how to style the plots to make them more attractive.</p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Introduction to tests and refactoring. You will learn how to build robust code and improve
+                      without affecting the rest of your program.</p>
+                  </div>
+                </li>
+
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">3</span>
+                  </div>
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Introduction to version control. You will learn how to use git to keep track of changes and share
+                      your code with others.</p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Time to work on your own projects!</p>
+                  </div>
+                </li>
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">4</span>
+                  </div>
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Abstract parts of your code as a package, that you can use in several projects, or that you can
+                      share with other. We will use <b>Pycharm</b> for this, a full-fledged development environment.</p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Introduction to threads to run longer tasks while at the same time being able to monitor
+                      them.</p>
+                  </div>
+                </li>
+                <li class="step-item">
+                  <div class="step-icon">
+                    <span class="iconbox">5</span>
+                  </div>
+                  <div class="step-content">
+                    <h6><strong>Morning</strong></h6>
+                    <p>Introduction to object-oriented programming and how to build extensible code and packages.</p>
+                    <h6><strong>Afternoon</strong></h6>
+                    <p>Time to work on your own projects!</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article>
+            <header class="header-title"><h2>Contact Us</h2></header>
+            <p class="lead">
+              If you want to learn more, send us an e-mail to
+              <mark>courses@pythonforthelab.com</mark>
+              with any questions or remarks. We will happy to answer them!
+            </p>
+          </article>
+
+        </div>
+        <div class="col-md-4 col-xl-3 d-none d-md-block">
+          <aside class="sidebar sidebar-sticky">
+            <h6 class="sidebar-title">Python for the lab</h6>
+            <nav id="nav-scrollspy" class="nav flex-column">
+              <a class="nav-link" href="#about">About the Course</a>
+              <a class="nav-link" href="#syllabus">Detailed Syllabus</a>
+            </nav>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
