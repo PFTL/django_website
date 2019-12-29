@@ -23,23 +23,19 @@
         <div class="col-md-7 col-xl-8 mr-md-auto py-8">
           <article>
             <p class="lead">
-              Once you already know the basics about communicating with your devices and building GUI's you will want to
-              reach new levels.
+              Once you already know the basics about communicating with your devices and building GUI's you will want to reach new levels.
             </p>
             <p>
-              This course focuses into all the details that were left outside during the course <a
+              This course focuses on all the details that were left outside during the course <a
                     href="{% url 'course-pftl' %}">Python for the Lab</a>, including threading, the use of hdf5 files,
-              styling the user interface, and packaging for distribution. In this course you will go one step further
-              with your skills to develop better software.
+              styling the user interface, and packaging for distribution. In this course, you will go one step further with your skills to develop better software.
             </p>
             <p>In this course you will acquire data from a webcam. This poses an additional challenge, since webcams
-              generate too much data, sometimes more than what a computer screen can show. From a technical point of
-              view, we will cover a lot of ground on threading and multiprocessing with Python. We will also see how to
-              use hdf5 files to store data in real time.
+              generate too much data, sometimes more than what a computer screen can show. From a technical point of view, we will cover a lot of ground on threading and multiprocessing with Python. We will also see how to use hdf5 files to store data in real-time.
             </p>
             <p>From a best-practices perspective, you will learn to document, test, package and distribute your code.
               This is a very important next step if you want your software to be used and expanded by others, doesn't
-              matter if colleagues or scientists accross the globe.</p>
+              matter if colleagues or scientists across the globe.</p>
             <p class="lead">Do you like what you read? Send us an e-mail to
               <mark>courses@pythonforthelab.com</mark>
               and we will glad to clarify any of your doubts. This course is offered to groups of up to 7 people in
@@ -48,35 +44,30 @@
             <h3 id="about" data-provide="anchor">About the Course</h3>
             <h6>Intended audience</h6>
             <p>
-              The workshop is aimed at scientists willing to learn how to bring their skills to the next level. This is
-              not an introductory course, and experience is required. <b>Prerequisite</b>: Ideally, following Python for
-              the Lab in advance, as some of the topics will not be discussed again, but will be given for granted.
-              However, experienced Python programmers, who are confident with creating custom-classes, and have already
-              covered the basics of building user interface, can follow the course without inconvenience.
+              The workshop is aimed at scientists willing to learn how to bring their skills to the next level. This is not an introductory course, and experience is required. <b>Prerequisite</b>: Ideally, following Python for
+              the Lab in advance, because some of the topics will not be discussed again but will be given for granted.
+              However, experienced Python programmers, who are confident with creating custom-classes, and have already covered the basics of building a user interface, can follow the course without inconvenience.
             </p>
+            <p>Some of the topics we will discuss include topics such as decorators, concurrency, caching. We will also
+              work with the cycle of objects, from definition to instantiation, to deletion. This will allow us to fine-control how we interact with the devices and avoid problems. If you are not familiar at all with this
+              ideas, we suggest you to check <a href="{% url 'course-pftl' %}">Python for the Lab</a>, our introductory
+              course.</p>
             <h6>Technology Stack</h6>
-            <p></p>
+            <p>Everything will be built with Python, using <b>PyCharm</b> as the editor of choice. We will rely on
+              standard packages such as numpy, h5py, and PyQt. We will use Git to perform version control and share the progress with the rest of the group. To build the documentation we will use Sphinx and Read the Docs to
+              make it public.</p>
             <h6>Requisites</h6>
             <p>
-              In order to follow the workshop, you will need to bring a laptop with any operating system you normally
-              use and with which you feel comfortable. You will receive installation instructions prior to the start of
-              the course in order to prepare your development environment.
+              To follow the workshop, you will need to bring a laptop with any operating system you normally use and with which you feel comfortable. You will receive installation instructions before the start of the course to prepare your development environment.
             </p>
             <h6>Duration</h6>
-            <p>The workshop is offered in two different formats: <b>3 or 5 consecutive full-days</b>. The 3-day course
-              offers the basic tools a scientist needs when analysing data, and this time will also be used to learn
-              about Python's syntax and best practices.</p>
-            <p>In the <b>5 days</b> course, participants will also be introduced to other tools which are very handy to
-              distribute code, including <b>Pycharm</b> and <b>Github</b>.</p>
-            <p>In both cases, time can be adapted according the group dynamics and background. Biologists will focus on
-              biologically-relevant data, but also chemists, physicists, etc. This will keep a high-level of engagement
-              with the audience. Depending on the background of the group, there is always room for including extra
-              topics. Certificates of completion are given upon completion of the workshop.</p>
+            <p>The workshop demands <b>3 full days</b>. During the time of the workshops, we expect participants to be
+              fully
+              engaged with the program. It has a very intense rhythm and collective discussions to which is worth
+              attending to maximize the learning.</p>
             <h6>About the Instructor</h6>
-            <p>Aquiles Carattino completed his PhD in experimental Physics in 2017. During this period, he started
-              developing software for his own experiments, and in 2017 founded a company to develop software for
-              research labs. By the end of 2017 he created pythonforthelab.com and started offering workshops aiming at
-              creating a strong community of python developers around common technologies and practices. In early 2019,
+            <p>Aquiles Carattino completed his Ph.D. in experimental Physics in 2017. During this period, he started
+              developing software for his experiments, and in 2017 founded a company to develop software for research labs. By the end of 2017, he created pythonforthelab.com and started offering workshops aiming at creating a strong community of python developers around common technologies and practices. In early 2019,
               Aquiles and some partners founded a new company to develop the next generation of nanoparticle tracking
               devices, which are planned to be released to the market in early 2020.</p>
             <h3 id="syllabus" data-provide="anchor">Detailed Syllabus</h3>
@@ -88,12 +79,10 @@
                   </div>
                   <div class="step-content">
                     <h6><strong>Morning</strong></h6>
-                    <p>Getting started with <b>Jupyter Lab</b>. We will quickly see how to use this powerful tool, and
-                      will use the opportunity to learn the basics of Python's syntax</p>
+                    <p>Setting up. We will discuss the requirements of the program, and lay out the architecture of the
+                      program. Developing a model for the camera.</p>
                     <h6><strong>Afternoon</strong></h6>
-                    <p>Reading data from files, exploring the information. We will learn how to fit the data to a model
-                      and see how to iterate the process over many files automatically. We will see how to plot the
-                      information in order to visualize what we are doing.</p>
+                    <p>Building the model for the experiment, and a first version of the User Interface.</p>
                   </div>
                 </li>
                 <li class="step-item">
@@ -102,11 +91,11 @@
                   </div>
                   <div class="step-content">
                     <h6><strong>Morning</strong></h6>
-                    <p>Using pandas to simplify working with tabular data. Learn to load and save data to further
-                      process or share. Learn how to style the plots to make them more attractive.</p>
+                    <p>Deep dive on threading and multiprocessing. Learn how to acquire, save, and analyze data in real
+                      time, while still displaying it on the User Interface.</p>
                     <h6><strong>Afternoon</strong></h6>
-                    <p>Introduction to tests and refactoring. You will learn how to build robust code and improve
-                      without affecting the rest of your program.</p>
+                    <p>Structure the code as a package. Add documentation. Share it through git. Dicsussion about what
+                      makes a program sustainable.</p>
                   </div>
                 </li>
 
@@ -116,10 +105,10 @@
                   </div>
                   <div class="step-content">
                     <h6><strong>Morning</strong></h6>
-                    <p>Introduction to version control. You will learn how to use git to keep track of changes and share
-                      your code with others.</p>
+                    <p>Running an experiment from Jupyter Notebooks. Using them as lab journal, ensuring reproducibility
+                      and easy to share.</p>
                     <h6><strong>Afternoon</strong></h6>
-                    <p>Time to work on your own projects!</p>
+                    <p>Styling the user interface</p>
                   </div>
                 </li>
                 <li class="step-item">
