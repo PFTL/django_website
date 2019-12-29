@@ -29,7 +29,7 @@ urlpatterns = [
 
     path('free_chapter/', RequestFreeChapter.as_view(), name='request-free-chapter'),
     path('confirm/<str:secret_code>', ConfirmFreeChapter.as_view(), name='confirm-free-chapter'),
-    path('courses', TemplateView.as_view(template_name='courses/index.html'), name='courses'),
+    path('courses/', TemplateView.as_view(template_name='courses/index.html'), name='courses'),
     path('courses/python-for-the-lab', TemplateView.as_view(template_name='courses/pftl.html'), name='course-pftl'),
     path('courses/advanced-python-for-the-lab', TemplateView.as_view(template_name='courses/advanced_pftl.html'),
          name='course-advanced-pftl'),
