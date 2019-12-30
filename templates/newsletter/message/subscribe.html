@@ -1,3 +1,4 @@
+{% with name=subscription.name title=newsletter.title domain=site.domain url=subscription.subscribe_activate_url %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +6,7 @@
   <title>Subscription to {{ title }}</title>
 </head>
 <body>
+
 <p>Dear {{ name|default:"Sir/Madam" }},<br/>
   you, or someone in your name requested a subscription to {{ title }}.</p>
 <p>If you would like to confirm your subscription, please follow this activation link:<br/>
@@ -15,3 +17,4 @@
 </p>
 </body>
 </html>
+{% endwith %}
