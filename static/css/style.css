@@ -788,11 +788,13 @@ strong { font-weight: 700; }
 /* Footer */
 .footer { padding: 28px 0; background: #2c3239; flex-shrink: 0; }
 .footer .footer-cnt { display: flex; justify-content: space-between; font-size: 13px; line-height: 17px; color: #ffffff; font-weight: 300; align-items: center; }
-.footer .footer-cnt p { display: block; width: 48%; }
+.footer .footer-cnt p { display: block; width: 30%; }
+.footer .footer-cnt p.center {width: 48%; text-align: center}
+.footer .footer-cnt .center a {margin: 0;}
 .footer .footer-cnt p.right { text-align: right; }
 .footer .footer-cnt a { color: #18bc9c; margin: 0 0 0 21px; position: relative; }
 .footer .footer-cnt a:hover { text-decoration: underline; }
-.footer .footer-cnt a:before { content: ''; position: absolute; top: 50%; transform: translateY(-50%); left: -12px; width: 1px; height: 10px; background: #565b61; display: block; }
+.footer .footer-cnt .right a:before { content: ''; position: absolute; top: 50%; transform: translateY(-50%); left: -12px; width: 1px; height: 10px; background: #565b61; display: block; }
 .footer .footer-cnt a:first-child:before { display: none; }
 
 @media screen and (max-width: 479px) {
