@@ -1,10 +1,6 @@
-import json
-
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
-from django.utils.decorators import method_decorator
 from django.views import View
-from django.views.decorators.csrf import csrf_exempt
 
 from free_chapter.models import People, FreeChapter
 
