@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     'allauth',
+    'anymail',
     'allauth.account',
     'allauth.socialaccount',
     'sorl.thumbnail',

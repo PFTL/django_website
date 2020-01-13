@@ -1,6 +1,7 @@
 Django>=2.2.9,<2.3
 wagtail>=2.7,<2.8
 django-comments-xtd
+django-anymail
 django_allauth
 django-debug-toolbar
 django-crispy-forms
