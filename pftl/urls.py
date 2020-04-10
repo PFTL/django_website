@@ -2,13 +2,13 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import TemplateView
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.contrib.sitemaps.views import sitemap
 
+from base.views import ContactUsView
 from blog.forms import BlogsFeed
 from free_chapter.views import RequestFreeChapter, ConfirmFreeChapter
 from search import views as search_views
@@ -26,6 +26,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     url(r'^newsletter/', include('newsletter.urls')),
+
+    url('contact-us', ContactUsView.as_view(), name='contact-us'),
 
     path('free_chapter/', RequestFreeChapter.as_view(), name='request-free-chapter'),
     path('confirm/<str:secret_code>', ConfirmFreeChapter.as_view(), name='confirm-free-chapter'),

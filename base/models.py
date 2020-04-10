@@ -172,3 +172,13 @@ class FormPage(AbstractEmailForm):
             FieldPanel('subject'),
         ], "Email"),
     ]
+
+
+@register_snippet
+class Message(models.Model):
+    submitted = models.DateTimeField(auto_now_add=True)
+    from_email = models.EmailField(blank=False)
+    text = models.TextField(blank=False)
+
+    def __str__(self):
+        return f"Message from <{self.from_email}>"
