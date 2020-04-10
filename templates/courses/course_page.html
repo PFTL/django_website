@@ -1,5 +1,5 @@
 {% extends 'courses/base.html' %}
-{% load wagtailimages_tags wagtailcore_tags wagtailmarkdown %}
+{% load wagtailimages_tags wagtailcore_tags %}
 {% load comments comments_xtd %}
 {% block content %}
   <div class="container">
@@ -13,9 +13,6 @@
         <h1>{{ page.title }}</h1>
         <h3>{{ page.subtitle }}</h3>
         {{ self.body|richtext }}
-        <div class="bottom-section">
-          &nbsp;
-        </div>
       </div>
       <div class="rightside">
         <div class="support-box">
