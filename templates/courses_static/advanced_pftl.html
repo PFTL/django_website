@@ -1,4 +1,4 @@
-{% extends 'courses/base.html' %}
+{% extends 'courses_static/base.html' %}
 {% load static %}
 {% block body %}
   <!-- Header -->
@@ -13,7 +13,7 @@
     <nav class="bb-1 bg-gray" aria-label="breadcrumb">
       <div class="container">
         <ol class="breadcrumb px-0">
-          <li class="breadcrumb-item"><a href="{% url 'courses' %}">Courses</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'courses_static' %}">Courses</a></li>
           <li class="breadcrumb-item">Advanced Python for the Lab</li>
         </ol>
       </div>
