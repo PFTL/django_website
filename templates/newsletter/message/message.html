@@ -131,38 +131,38 @@
               <table border="0" cellpadding="0" cellspacing="0"
                      style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                 {% for article in message.articles.all %}
-                <tr>
-                  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-                    <p style="font-family: sans-serif; font-size: 16px; font-weight: bold; margin: 0; Margin-bottom: 15px;">{{ article.title }}</p>
-                    <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
-                      {{ article.text|safe }}
-                    </p>
-                    {% if article.url %}
-                    <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
-                           style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
-                      <tbody>
-                      <tr>
-                        <td align="left"
-                            style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;">
-                          <table border="0" cellpadding="0" cellspacing="0"
-                                 style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
-                            <tbody>
-                            <tr>
-                              <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #3498db; border-radius: 5px; text-align: center;">
-                                <a href="http://htmlemail.io" target="_blank"
-                                   style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;">Call
-                                  Read more</a></td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                    {% endif %}
-                  </td>
-                </tr>
-              {% endfor %}
+                  <tr>
+                    <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
+                      <p style="font-family: sans-serif; font-size: 16px; font-weight: bold; margin: 0; Margin-bottom: 15px;">{{ article.title }}</p>
+                      <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
+                        {{ article.text|safe }}
+                      </p>
+                      {% if article.url %}
+                        <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"
+                               style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
+                          <tbody>
+                          <tr>
+                            <td align="left"
+                                style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;">
+                              <table border="0" cellpadding="0" cellspacing="0"
+                                     style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;">
+                                <tbody>
+                                <tr>
+                                  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #3498db; border-radius: 5px; text-align: center;">
+                                    <a href="{{ article.url }}" target="_blank"
+                                       style="display: inline-block; color: #ffffff; background-color: #3498db; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;">Read
+                                      more</a></td>
+                                </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
               </table>
             </td>
           </tr>
@@ -178,15 +178,17 @@
               <td class="content-block"
                   style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
                 <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
-                <br> Don't like these emails? <a href="http://{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}"
-                                                 style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
+                <br> Don't like these emails? <a
+                      href="http://{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}"
+                      style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
               </td>
             </tr>
             <tr>
               <td class="content-block powered-by"
                   style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
                 Powered by <a href="https://github.com/PFTL/django_website"
-                              style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">Open Source Software</a>.
+                              style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">Open
+                Source Software</a>.
               </td>
             </tr>
           </table>
