@@ -133,6 +133,7 @@
                 {% for article in message.articles.all %}
                 <tr>
                   <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
+                    <p style="font-family: sans-serif; font-size: 16px; font-weight: bold; margin: 0; Margin-bottom: 15px;">{{ article.title }}</p>
                     <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">
                       {{ article.text|safe }}
                     </p>
