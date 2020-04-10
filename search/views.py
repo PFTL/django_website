@@ -4,6 +4,8 @@ from django.shortcuts import render
 from wagtail.core.models import Page
 from wagtail.search.models import Query
 
+from blog.models import BlogPage
+
 
 def search(request):
     search_query = request.GET.get('query', None)
@@ -11,7 +13,7 @@ def search(request):
 
     # Search
     if search_query:
-        search_results = Page.objects.live().search(search_query)
+        search_results = BlogPage.objects.live().search(search_query)
         query = Query.get(search_query)
 
         # Record hit
@@ -29,6 +31,7 @@ def search(request):
         search_results = paginator.page(paginator.num_pages)
 
     return render(request, 'search/search.html', {
+        "intro_class": "blog",
         'search_query': search_query,
-        'search_results': search_results,
+        'results': search_results,
     })

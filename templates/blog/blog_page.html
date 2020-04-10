@@ -89,12 +89,12 @@
     <div class="mobile-sb-form">
       <div class="sb-form">
         <h4>Get all the information directly to your inbox</h4>
-        <form action="">
+        <form enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
+          {% csrf_token %}
           <div class="field-wp">
-            <input type="text" class="field" placeholder="Your E-Mail">
+            <input type="email" name="email_field" class="field" placeholder="Your E-Mail">
           </div>
           <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
-          <span class="small-text">Get relevant information, unsubscribe at any time.</span>
         </form>
       </div>
     </div>
