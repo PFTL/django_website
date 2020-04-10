@@ -103,14 +103,6 @@ class BooksPage(BasePage):
         return context
 
 
-class CoursePage(BasePage):
-    def get_context(self, request):
-        context = super(BasePage, self).get_context(request)
-        context['intro_class'] = 'about book'
-        context['wrapper_class']= ''
-        return context
-
-
 class HomePage(Page):
     """ Home Page, needs to respect the sections available in the template.
     """
@@ -146,6 +138,7 @@ class HomePage(Page):
 
     def __str__(self):
         return self.title
+
 
 class FormField(AbstractFormField):
     """ Quick and dirty solution to add forms through the Wagtail admin
