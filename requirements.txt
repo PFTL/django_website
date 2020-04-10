@@ -1,10 +1,11 @@
 Django>=2.2.9,<2.3
-wagtail>=2.7,<2.8
+wagtail>=2.8,<2.9
 django-comments-xtd
 django-anymail
 django_allauth
 django-debug-toolbar
 django-crispy-forms
 wagtailfontawesome
--e git://github.com/aquilesC/django-newsletter.git#egg=django_newsletter
+django-newsletter
+#-e git://github.com/aquilesC/django-newsletter.git#egg=django_newsletter
 -e git://github.com/aquilesC/wagtail-markdown.git@develop#egg=wagtail-markdown
