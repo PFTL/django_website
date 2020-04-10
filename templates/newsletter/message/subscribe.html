@@ -7,12 +7,15 @@
 </head>
 <body>
 
-<p>Dear {{ name|default:"Sir/Madam" }},<br/>
-  you, or someone in your name requested a subscription to {{ title }}.</p>
-<p>If you would like to confirm your subscription, please follow this activation link:<br/>
-  <a href="http://{{ domain }}{{ url }}">http://{{ domain }}{{ url }}</a>
+<p>Hello!<br/>
+  You have requested a subscription to {{ title }}.</p>
+<p>In order to confirm your subscription, please follow this activation link:<br/>
+  <a href="https://{{ domain }}{{ url }}">https://{{ domain }}{{ url }}</a>
 </p>
-<p>Kind regards,<br/>
+<p>
+  If you have any comments, just reply to this e-mail!
+</p>
+<p>Best regards,<br/>
   {{ newsletter.sender }}
 </p>
 </body>

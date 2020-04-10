@@ -6,12 +6,13 @@
     <title>Unsubscription from {{ title }}</title>
 </head>
 <body>
-<p>Dear {{ name|default:"Sir/Madam" }},<br />
-  you, or someone in your name requested unsubscription from {{ title }}.</p>
-<p>If you would like to confirm your unsubscription, please follow this activation link:<br />
-<a href="http://{{ domain }}{{ url }}">http://{{ domain }}{{ url }}</a>
+<p>Hello!<br />
+  We received your request to unsubscribe from {{ title }}.</p>
+<p>To confirm the unsubscription, please follow this link:<br />
+<a href="https://{{ domain }}{{ url }}">https://{{ domain }}{{ url }}</a>
 </p>
-<p>Kind regards,<br />
+<p>We are sorry to see you go, if you would like to let us know why, just reply to this e-mail.</p>
+<p>Best regards,<br />
 {{ newsletter.sender }}</p>
 </body>
 </html>
