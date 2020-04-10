@@ -3,7 +3,6 @@
 {% load comments comments_xtd %}
 {% block content %}
   <div class="container">
-
     <div class="article-cnt">
       <div class="leftside">
         <div class="article-image">
@@ -22,42 +21,6 @@
             <span class="item-tag {% if forloop.counter == 1 %}first{% endif %}">{{ tag }}</span>
           {% endfor %}
         </div>
-        {#                        <div class="toc">#}
-        {#                            <div class="title">List of Contents</div>#}
-        {#                            <ul>#}
-        {#                                <li>#}
-        {#                                    <a href="#title-1">Introduction to importing</a>#}
-        {#                                </li>#}
-        {#                                <li>#}
-        {#                                    <a href="#">Importing *</a>#}
-        {#                                </li>#}
-        {#                                <li>#}
-        {#                                    <a href="#">Importing As</a>#}
-        {#                                </li>#}
-        {#                                <li>#}
-        {#                                    <a href="#">Importing your code</a>#}
-        {#                                </li>#}
-        {#                                <li>#}
-        {#                                    <a href="#">Adding Folder to the Path</a>#}
-        {#                                    <ul>#}
-        {#                                        <li><a href="#">PYTHONPATH and Virtual Environment</a></li>#}
-        {#                                        <li><a href="#">PYTHONPATH and PyCharm</a></li>#}
-        {#                                    </ul>#}
-        {#                                </li>#}
-        {#                                <li>#}
-        {#                                    <a href="#">Absolute Imports</a>#}
-        {#                                </li>#}
-        {#                                <li>#}
-        {#                                    <a href="#">Relative Imports</a>#}
-        {#                                    <ul>#}
-        {#                                        <li><a href="#">Mixing Absolute and Relative</a></li>#}
-        {#                                    </ul>#}
-        {#                                </li>#}
-        {#                                <li>#}
-        {#                                    <a href="#">Absolute or Relative: Conclusions</a>#}
-        {#                                </li>#}
-        {#                            </ul>#}
-        {#                        </div>#}
         {{ self.body|markdown }}
         <div class="info-list">
           <span class="item author">Article written by {{ page.first_author }}</span>
@@ -65,43 +28,7 @@
             <span class="item designer">{{ page.image_data|richtext }}</span>
           {% endif %}
         </div>
-{#        <div class="similar-posts">#}
-{#          <h3>Similar Articles:</h3>#}
-{#          <ul>#}
-{#            <li>#}
-{#              <a href="#" class="item">#}
-{#                <img src="css/images/post-image-2.png" alt="">#}
-{#                <span class="date">22 SEP 2019</span>#}
-{#                <span class="name">Imports: Absolute, Relative and More</span>#}
-{#              </a>#}
-{#            </li>#}
-{#            <li>#}
-{#              <a href="#" class="item">#}
-{#                <img src="css/images/post-image-2.png" alt="">#}
-{#                <span class="date">12 SEP 2019</span>#}
-{#                <span class="name">Handling and Sharing Data Between Threads</span>#}
-{#              </a>#}
-{#            </li>#}
-{#            <li>#}
-{#              <a href="#" class="item">#}
-{#                <img src="css/images/post-image-2.png" alt="">#}
-{#                <span class="date">12 SEP 2019</span>#}
-{#                <span class="name">Monkey Patching and its consequences</span>#}
-{#              </a>#}
-{#            </li>#}
-{#          </ul>#}
-{#        </div>#}
         <div class="bottom-section">
-{#          <div class="sec-top">#}
-{#            <h3>You liked this tutorial?</h3>#}
-{#            <h4>Share it with your friends!</h4>#}
-{#            <div class="share">#}
-{#              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" target="_blank"#}
-{#                 class="soc-icon tw" data-show-count="true">Twitter</a>#}
-{#              <a href="#" target="_blank" class="soc-icon fb">Facebook</a>#}
-{#              <a href="#" target="_blank" class="soc-icon in">Instagram</a>#}
-{#            </div>#}
-{#          </div>#}
           <h4>Share your thoughts with us!</h4>
           {% if self.allow_comments %}
             <div class="card card-block mb-5">
@@ -121,7 +48,6 @@
             {% if comment_count %}
               {% render_xtdcomment_tree for self allow_flagging %}
             {% endif %}
-
           </div>
         </div>
       </div>
