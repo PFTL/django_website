@@ -29,11 +29,6 @@ urlpatterns = [
 
     path('free_chapter/', RequestFreeChapter.as_view(), name='request-free-chapter'),
     path('confirm/<str:secret_code>', ConfirmFreeChapter.as_view(), name='confirm-free-chapter'),
-    path('courses/', TemplateView.as_view(template_name='courses_static/index.html'), name='courses'),
-    path('courses/python-for-the-lab', TemplateView.as_view(template_name='courses_static/pftl.html'), name='course-pftl'),
-    path('courses/advanced-python-for-the-lab', TemplateView.as_view(template_name='courses_static/advanced_pftl.html'),
-         name='course-advanced-pftl'),
-    path('courses/python-for-scientists', TemplateView.as_view(template_name='courses_static/pfs.html'), name='course-pfs'),
     url('^sitemap\.xml$', sitemap),
     url(r'feed\.rss$', BlogsFeed(), name='feed'),
 
