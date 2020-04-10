@@ -1,10 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'courses/base.html' %}
+{% load wagtailimages_tags wagtailcore_tags wagtailmarkdown %}
+{% load comments comments_xtd %}
+{% block content %}
+  <div class="container">
+    <div class="article-cnt">
+      <div class="leftside">
+        <div class="article-image">
+          {% if page.image %}
+            {% image page.image width-800 %}
+          {% endif %}
+        </div>
+        <h1>{{ page.title }}</h1>
+        <h3>{{ page.subtitle }}</h3>
+        {{ self.body|richtext }}
+        <div class="bottom-section">
+          &nbsp;
+        </div>
+      </div>
+      <div class="rightside">
+        <div class="support-box">
+          <h3>Support Us</h3>
+          <p>If you like the content of this website, consider buying a copy of the book <strong>Python
+            For The Lab</strong></p>
+          <a href="/books" class="button">Check out the book</a>
+        </div>
+        <div class="latest-posts">
+          <h3>Our Courses</h3>
+          <ul>
+            {% for course in courses %}
+              <li>
+                <a href="{{ course.url }}">{{ course.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="subscribe-fixed">
+          <button class="action">Never Stop Learning</button>
+          <div class="cnt">
+            <p>Join over 1000 Python developers and don't miss any updates!</p>
+            <form enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
+              {% csrf_token %}
+              <div class="field-wp">
+                <input type="email" name="email_field" class="field" placeholder="Your E-Mail">
+              </div>
+              <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+            </form>
+            <p>Or check out our <a href="/books">Books</a>! <br> <a href="/privacy">Privacy Policy</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-sb-form">
+      <div class="sb-form">
+        <h4>Get all the information directly to your inbox</h4>
+        <form action="">
+          <div class="field-wp">
+            <input type="text" class="field" placeholder="Your E-Mail">
+          </div>
+          <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+          <span class="small-text">Get relevant information, unsubscribe at any time.</span>
+        </form>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}
+{% block extra_js %}
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endblock %}

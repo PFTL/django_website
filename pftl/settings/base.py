@@ -9,6 +9,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'base',
     'blog',
+    'courses',
     'free_chapter',
     'search',
     'crispy_forms',
