@@ -1,5 +1,5 @@
-Django>=2.2.9,<2.3
-wagtail>=2.8,<2.9
+wagtail
+Django
 django-comments-xtd
 django-anymail
 django_allauth
