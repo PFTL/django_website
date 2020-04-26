@@ -1,0 +1,18 @@
+{% extends "newsletter/common.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Newsletter" %} {{ newsletter.title }} {{ action }}
+  {% trans "activate" %}{% endblock head_title %}
+
+{% block content %}
+  <span class="login100-form-title p-b-32">{% trans "Newsletter" %} {{ newsletter.title }} {{ action }} {% trans "activate" %}</span>
+
+  <form enctype="multipart/form-data" method="post" action="">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="form-group container-login100-form-btn">
+      <button type="submit" class="login100-form-btn">{% trans "Activate" %}</button>
+    </div>
+  </form>
+{% endblock content %}
