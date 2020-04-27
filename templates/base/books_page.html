@@ -1,12 +1,7 @@
 {% extends 'base/base.html' %}
 {% load wagtailcore_tags wagtailimages_tags static %}
 {% block extra_head_js %}
-<script
-    id="fsc-api"
-    src="https://d1f8f9xcsvx3ha.cloudfront.net/sbl/0.7.5/fastspring-builder.min.js"
-    type="text/javascript"
-    data-storefront="pythonforthelab.onfastspring.com/popup-pftl-book">
-</script>
+<script src="https://gumroad.com/js/gumroad.js"> </script>
 {% endblock %}
 {% block intro_cnt %}{% endblock %}
 {% block head-extra %}
@@ -24,7 +19,7 @@
     <div class="container">
         <div class="main-cnt book">
             <span class="book-item">Book</span>
-            <a href="#" class="button" data-fsc-action="Add,Checkout" data-fsc-item-path-value="python-for-the-lab-book">Get the book, only for 15U$</a>
+            <a class="gumroad-button" href="https://gum.co/kgSsv" target="_blank">Get the Book</a>
             <div class="chapter-box">
                 <div class="title">
                     Get a free sample chapter
