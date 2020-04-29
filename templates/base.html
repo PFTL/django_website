@@ -54,7 +54,7 @@
   {% endif %}
 
   <!-- Twitter Card data -->
-  <meta name="twitter:site" content="@pftl3"/>
+  <meta name="twitter:site" content="@aquicarattino"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="{{ self.title }}"/>
   {% if self.image %}
@@ -66,7 +66,7 @@
       {{ self.subtitle }}
 {% endif %}">
 
-  <meta name="twitter:creator" content="@_aquic_"/>
+  <meta name="twitter:creator" content="@aquicarattino"/>
   <!-- Twitter summary card with large image must be at least 280x150px -->
   {% if self.image %}
     <meta name="twitter:image:src" content="{{ head_image.url }}">
@@ -88,7 +88,7 @@
 
   <link rel="canonical" href="{{ self.url }}"/>
   <meta name="author" content="Aquiles Carattino">
-
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url 'feed' %}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="css/favicon/ms-icon-144x144.png' %}">
   <meta name="theme-color" content="#ffffff">
