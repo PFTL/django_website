@@ -4,9 +4,9 @@ from blog.models import BlogPage
 
 
 class BlogsFeed(Feed):
-    title = "Python for the lab blog articles"
-    link = "/feed/"
-    description = "All the articles as they are published"
+    title = "Python for the lab"
+    link = "/blog"
+    description = "Learn how to use Python for controlling your experiments"
 
     def items(self):
         return BlogPage.objects.live().order_by('-date_published')
