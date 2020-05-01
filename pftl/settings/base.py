@@ -205,6 +205,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WAGTAILMARKDOWN_EXTENSIONS = ['toc', 'admonition', ]
 
-CORS_ORIGIN_WHITELIST = [
-    'https://gitbook.pythonforthelab.com',
-]
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = [
+#     'https://gitbook.pythonforthelab.com',
+# ]
