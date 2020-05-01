@@ -11,6 +11,7 @@ from wagtail.contrib.sitemaps.views import sitemap
 from base.views import ContactUsView
 from blog.forms import BlogsFeed
 from free_chapter.views import RequestFreeChapter, ConfirmFreeChapter
+from git_book.views import SubscribeGitView
 from search import views as search_views
 
 urlpatterns = [
@@ -31,6 +32,7 @@ urlpatterns = [
 
     path('free_chapter/', RequestFreeChapter.as_view(), name='request-free-chapter'),
     path('confirm/<str:secret_code>', ConfirmFreeChapter.as_view(), name='confirm-free-chapter'),
+    path('git-book', SubscribeGitView.as_view(), name='subscribe-git'),
     url('^sitemap\.xml$', sitemap),
     url(r'feed\.rss$', BlogsFeed(), name='feed'),
 

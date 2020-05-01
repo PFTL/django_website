@@ -11,6 +11,7 @@ INSTALLED_APPS = [
     'blog',
     'courses',
     'free_chapter',
+    'git_book',
     'search',
     'crispy_forms',
 
@@ -92,7 +93,7 @@ WSGI_APPLICATION = 'pftl.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(PROJECT_DIR, 'db.sqlite3'),
     }
 }
 
