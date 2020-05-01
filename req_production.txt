@@ -9,6 +9,7 @@ django-allauth==0.41.0
 django-anymail==7.1.0
 django-comments-xtd==2.5.0
 django-contrib-comments==1.9.2
+django-cors-headers==3.2.1
 django-crispy-forms==1.9.0
 django-debug-toolbar==2.2
 django-modelcluster==5.0.1

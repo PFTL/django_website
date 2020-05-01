@@ -14,9 +14,6 @@ class SubscribeGitView(View):
             if Subscription.objects.filter(email=email).exists():
                 return JsonResponse({'message': 'Already signed up'})
             Subscription.objects.create(email=email)
-            response =  JsonResponse({'message': 'Thank you for signing up!'})
-            response['Access-Control-Allow-Origin'] = '*'
-            return response
-
+            return JsonResponse({'message': 'Thank you for signing up!'})
         return HttpResponse(status=400)
 

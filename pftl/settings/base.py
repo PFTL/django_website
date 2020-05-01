@@ -15,6 +15,8 @@ INSTALLED_APPS = [
     'search',
     'crispy_forms',
 
+    'corsheaders',
+
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -201,3 +204,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_REDIRECT_URL = '/'
 
 WAGTAILMARKDOWN_EXTENSIONS = ['toc', 'admonition', ]
+
+CORS_ORIGIN_WHITELIST = [
+    'https://gitbook.pythonforthelab.com',
+]
