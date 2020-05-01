@@ -1,9 +1,12 @@
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 
 from git_book.models import Subscription
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class SubscribeGitView(View):
     def post(self, request, *args, **kwargs):
         email = request.POST.get('email', None)
