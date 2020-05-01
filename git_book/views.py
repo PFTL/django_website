@@ -12,6 +12,8 @@ logger = logging.getLogger(__name__)
 @method_decorator(csrf_exempt, name='dispatch')
 class SubscribeGitView(View):
     def post(self, request, *args, **kwargs):
+        for key, value in request.POST.items():
+            logger.info(f'{key} => {value}')
         email = request.POST.get('email', None)
         logger.info(email)
         if email:
