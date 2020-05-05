@@ -109,7 +109,8 @@ DEFAULT_FROM_EMAIL = env(
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = env(
-    "DJANGO_EMAIL_SUBJECT_PREFIX", default="[Python for the Lab Website]"
+    "DJANGO_EMAIL_SUBJECT_PREFIX", default="[Python for the Lab Website"
+                                           "]"
 )
 
 # ADMIN

@@ -89,6 +89,7 @@ WAGTAIL_APPS = [
     'wagtail.core',
     'wagtailfontawesome',
     'wagtailmarkdown',
+    'wagtailimportexport',
     'modelcluster',
     'taggit',
 ]
