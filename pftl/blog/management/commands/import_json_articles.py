@@ -14,4 +14,4 @@ class Command(BaseCommand):
             with open(os.path.join(file_path, file), 'r') as f:
                 data = json.load(f)
                 page = BlogPage(**data)
-                index_page.add_child(page)
+                index_page.add_child(instance=page)
