@@ -7,6 +7,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.contrib.sitemaps.views import sitemap
+from wagtailimportexport import urls as wagtailimportexport_urls
 
 from base.views import ContactUsView
 from blog.forms import BlogsFeed
@@ -35,7 +36,7 @@ urlpatterns = [
     path('git-book', SubscribeGitView.as_view(), name='subscribe-git'),
     url('^sitemap\.xml$', sitemap),
     url(r'feed\.rss$', BlogsFeed(), name='feed'),
-
+    url(r'', include(wagtailimportexport_urls)),
     url(r'', include(wagtail_urls)),
 ]
 

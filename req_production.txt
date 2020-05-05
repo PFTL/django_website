@@ -39,8 +39,9 @@ surlex==0.2.0
 unicodecsv==0.14.1
 Unidecode==1.1.1
 urllib3==1.25.9
-wagtail==2.8.1
+wagtail==2.9
 -e git://github.com/aquilesC/wagtail-markdown.git@29ad9a56218f813b79042b12072202c27db2acd0#egg=wagtail_markdown
 wagtailfontawesome==1.2.1
 webencodings==0.5.1
 Willow==1.3
+wagtail-import-export==0.2
