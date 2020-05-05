@@ -14,7 +14,6 @@ class Command(BaseCommand):
             data = {
                 'title': post.title,
                 'subtitle': post.subtitle,
-                'image': post.image,
                 'image_data': post.image_data,
                 'tags': [tag.slug for tag in post.get_tags],
                 'date_published': f'{post.date_published:}',
