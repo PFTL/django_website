@@ -11,7 +11,7 @@ from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
 from pftl.base.blocks import BaseStreamBlock
-from pftl.blog.models import BlogIndexPage
+from pftl.blog.models import BlogIndexPage, BlogPage
 
 
 @register_snippet
@@ -133,7 +133,9 @@ class HomePage(Page):
         context['wrapper_class'] = 'home'
         context['intro_class'] = 'home'
         bp = BlogIndexPage.objects.first()
-        children = bp.children().live().order_by('-date_published')[:3]
+        children = BlogPage.objects.descendant_of(
+            bp).live().order_by(
+            '-date_published')[:3]
         context['feature_section_articles'] = children
         return context
 
