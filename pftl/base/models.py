@@ -132,7 +132,7 @@ class HomePage(Page):
         context['wrapper_class'] = 'home'
         context['intro_class'] = 'home'
         if self.featured_section:
-            children = self.featured_section.specific.children().live().order_by('-first_published_at')[:3]
+            children = self.featured_section.specific.children().live().order_by('-date_published')[:3]
             context['feature_section_articles'] = children
         return context
 
