@@ -73,6 +73,7 @@ THIRD_PARTY_APPS = [
     'newsletter',
     'django_comments_xtd',
     'django_comments',
+    'drip',
 ]
 
 WAGTAIL_APPS = [
@@ -89,7 +90,6 @@ WAGTAIL_APPS = [
     'wagtail.core',
     'wagtailfontawesome',
     'wagtailmarkdown',
-    'wagtailimportexport',
     'modelcluster',
     'taggit',
 ]
