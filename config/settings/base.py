@@ -74,7 +74,6 @@ THIRD_PARTY_APPS = [
     'newsletter',
     'django_comments_xtd',
     'django_comments',
-    'drip',
 ]
 
 WAGTAIL_APPS = [
