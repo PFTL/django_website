@@ -47,7 +47,7 @@
             <script type="text/javascript">
               DiscourseEmbed = {
                 discourseUrl: 'https://forum.pythonforthelab.com/',
-                discourseEmbedUrl: '{{ request.build_absolute_uri }}'
+                discourseEmbedUrl: 'https://pythonforthelab.com{{ self.url }}'
               };
 
               (function () {
@@ -117,6 +117,6 @@
 
   </div>
 {% endblock %}
-{% block extra_js %}
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endblock %}
+{#{% block extra_js %}#}
+{#  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>#}
+{#{% endblock %}#}
