@@ -63,7 +63,7 @@ class FreeChapter(models.Model):
         email_from = '{} <{}>'.format(settings.DEFAULT_FROM_NAME, settings.DEFAULT_FROM_EMAIL)
         msg = EmailMultiAlternatives(subject, mail_text, email_from, [self.user.email],
                                      reply_to=[settings.DEFAULT_FROM_EMAIL])
-        msg.attach_file(os.path.join(settings.BASE_DIR, 'uploads/sample_chapter.pdf'))
+        msg.attach_file(os.path.join(settings.ROOT_DIR, 'uploads/sample_chapter.pdf'))
 
         msg.send()
         logger.info(f'Sent free chapter to {self.user.email}')

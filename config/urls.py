@@ -33,7 +33,6 @@ urlpatterns = [
     path('git-book', SubscribeGitView.as_view(), name='subscribe-git'),
     url('^sitemap\.xml$', sitemap),
     url(r'feed\.rss$', BlogsFeed(), name='feed'),
-    url(r'', include(wagtailimportexport_urls)),
     url(r'', include(wagtail_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
