@@ -1,11 +1,4 @@
-wagtail
-Django
-django-comments-xtd
-django-anymail
-django_allauth
-django-debug-toolbar
-django-crispy-forms
-wagtailfontawesome
-django-newsletter
-#-e git://github.com/aquilesC/django-newsletter.git#egg=django_newsletter
--e git://github.com/aquilesC/wagtail-markdown.git@develop#egg=wagtail-markdown
+# This file is expected by Heroku.
+
+-r requirements/production.txt
+

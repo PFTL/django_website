@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <!-- Wrapper -->
+  <section class="wrapper">
+    <!-- Intro -->
+    <div class="intro about">
+      <div class="container">
+        <div class="header">
+          <a href="/" class="logo">Python for the Lab</a>
+          <div class="header-dd">
+            <div class="navigation">
+              <ul>
+                <li><a href="/pftl/blog" class="nav-item blog"><span>Blog</span></a></li>
+                <li><a href="/pftl/courses" class="nav-item courses"><span>Courses</span></a></li>
+                <li><a href="https://forum.pythonforthelab.com/" target="_blank"
+                       class="nav-item forum"><span>Forum</span></a>
+                </li>
+                <li><a href="/books" class="nav-item books"><span>Books</span></a></li>
+                <li class="active"><a href="/about" class="nav-item about"><span>About</span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="search field-wp">
+              <form action="">
+                <input type="text" class="field" placeholder="Type to Search">
+                <input type="submit" class="search-btn">
+              </form>
+            </div>
+          </div>
+          <button class="menu-btn"><span>Menu</span></button>
+        </div>
+        <div class="about-cnt ab">
+          <h2>About Us</h2>
+          <p><strong>Python for the Lab</strong> was born as a companion for the courses given by <strong>Uetke</strong>.
+            The idea is to provide a series of articles that can boost the readers in their Python
+            endeavours. If you have any doubts, or are facing a problem to which there is no obvious
+            solution, or are looking for an opinion, the best is to join the forum, where you will meet a
+            lot of like-minded people.</p>
+          <div class="image-item">
+            <img src="css/images/profile.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Intro -->
+
+    <!-- Main -->
+    <div class="main">
+      <div class="container">
+        <div class="main-cnt ab">
+          <p>
+            My name is Aquiles and I am the guy behind <strong>Python for the Lab</strong> (or PFTL). If you
+            would like to get in contact with me or check my projects, you can follow me on <a
+                  href="https://github.com/aquilesC" target="_blank">Github</a> or just drop me a line at <a
+                  href="mailto:aquiles@uetke.com" target="_blank">aquiles@uetke.com</a>.
+          </p>
+          <p>
+            I am always on the look out for great ideas and inspiration!
+          </p>
+          <div class="button-wp">
+            <a href="/books" class="button"><span>Check out my book</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Main -->
+
+  </section>
+  <!-- End Wrapper -->
+{% endblock %}
