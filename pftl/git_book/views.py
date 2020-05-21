@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
-from git_book.models import Subscription
+from pftl.git_book.models import Subscription
 
 
 logger = logging.getLogger(__name__)

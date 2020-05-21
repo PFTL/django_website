@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class FreeChapterConfig(AppConfig):
-    name = 'git_book'
+class GitBookApp(AppConfig):
+    name = 'pftl.git_book'
