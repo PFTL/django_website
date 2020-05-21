@@ -10,6 +10,7 @@
         </li>
         <li><a href="/books" class="nav-item books"><span>Books</span></a></li>
         <li><a href="/about" class="nav-item about"><span>About</span></a></li>
+        <li>{% if not user.is_authenticated %}<a href="{% url 'account_login' %}" class="nav-item">Login</a>{% endif %}</li>
       </ul>
     </div>
     <div class="search field-wp">
