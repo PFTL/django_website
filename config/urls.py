@@ -7,15 +7,17 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
+
 from pftl.base.views import ContactUsView
 from pftl.blog.forms import BlogsFeed
 from pftl.free_chapter.views import RequestFreeChapter, ConfirmFreeChapter
+from pftl.git_book.views import SubscribeGitView
 from pftl.search import views as search_views
 
 urlpatterns = [
-    url(r'^django-admin/', admin.site.urls),
+    path(settings.ADMIN_URL, admin.site.urls),
 
-    url(r'^admin/', include(wagtailadmin_urls)),
+    url(r'^cms/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),

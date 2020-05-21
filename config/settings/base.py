@@ -101,6 +101,7 @@ LOCAL_APPS = [
     'pftl.courses',
     'pftl.free_chapter',
     'pftl.search',
+    'pftl.git_book.apps.GitBookApp'
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + WAGTAIL_APPS + LOCAL_APPS
@@ -120,7 +121,7 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = "users.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
-LOGIN_REDIRECT_URL = "users:redirect"
+LOGIN_REDIRECT_URL = "/profile"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
 LOGIN_URL = "account_login"
 
@@ -324,3 +325,5 @@ COMMENTS_XTD_CONTACT_EMAIL = "helpdesk@example.com"
 DEFAULT_FROM_NAME = 'Aquiles Carattino'
 
 WAGTAILMARKDOWN_EXTENSIONS = ['toc', 'admonition', ]
+
+WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'account/login.html'
