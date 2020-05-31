@@ -17,9 +17,6 @@
     <orderEntry type="jdk" jdkName="Python 3.6 (pftl_website)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery-3.4.1" level="application" />
-    <orderEntry type="module" module-name="theme" />
-    <orderEntry type="module" module-name="pftl_articles" />
-    <orderEntry type="module" module-name="pftl_code" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

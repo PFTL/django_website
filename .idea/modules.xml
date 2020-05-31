@@ -3,9 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/pftl.iml" filepath="$PROJECT_DIR$/.idea/pftl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../pftl_articles/.idea/pftl_articles.iml" filepath="$PROJECT_DIR$/../pftl_articles/.idea/pftl_articles.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../pftl_code/.idea/pftl_code.iml" filepath="$PROJECT_DIR$/../pftl_code/.idea/pftl_code.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Templates/themeforest-IGYqInTz-thesaas-responsive-bootstrap-saas-software-webapp-template/TheSaaS - v2.2.2/theme/.idea/theme.iml" filepath="$PROJECT_DIR$/../Templates/themeforest-IGYqInTz-thesaas-responsive-bootstrap-saas-software-webapp-template/TheSaaS - v2.2.2/theme/.idea/theme.iml" />
     </modules>
   </component>
 </project>

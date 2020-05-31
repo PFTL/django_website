@@ -304,9 +304,8 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 WAGTAIL_SITE_NAME = 'Python for the Lab'
 
-
 DEFAULT_FROM_NAME = 'Aquiles Carattino'
 
-WAGTAILMARKDOWN_EXTENSIONS = ['toc', 'admonition', 'fenced_code' ]
+WAGTAILMARKDOWN_EXTENSIONS = ['toc', 'admonition', 'fenced_code']
 
 WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'account/login.html'
