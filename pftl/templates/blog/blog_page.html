@@ -1,6 +1,5 @@
 {% extends 'blog/base.html' %}
 {% load wagtailimages_tags wagtailcore_tags wagtailmarkdown %}
-{% load comments comments_xtd %}
 {% block content %}
   <div class="container">
     <div class="article-cnt">
@@ -21,7 +20,11 @@
             <span class="item-tag {% if forloop.counter == 1 %}first{% endif %}">{{ tag }}</span>
           {% endfor %}
         </div>
-        {{ self.body|markdown }}
+        {% if self.body %}
+          {{ self.body|markdown }}
+      {% else %}
+          {{ self.extended_body }}
+      {% endif %}
         <div class="info-list">
           <span class="item author">Article written by {{ page.first_author }}</span>
           {% if page.image_data %}
@@ -29,18 +32,6 @@
           {% endif %}
         </div>
         <div class="bottom-section">
-          {#          <h4>Share your thoughts with us!</h4>#}
-          {#          {% if self.allow_comments %}#}
-          {#            <div class="card card-block mb-5">#}
-          {#              <div class="card-body">#}
-          {#                <h4 class="card-title text-center pb-3">Post your comment</h4>#}
-          {#                {% render_comment_form for self %}#}
-          {#              </div>#}
-          {#            </div>#}
-          {#          {% else %}#}
-          {#            <h3 class="text-center">comments are disabled for this article</h3>#}
-          {#          {% endif %}#}
-
           <div class="comments">
             <div id='discourse-comments'></div>
 
