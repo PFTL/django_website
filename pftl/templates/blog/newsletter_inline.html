@@ -1,13 +1,6 @@
-<div class="side-form small-sb-form">
-  <div class="sb-form">
-    <h4>Get all the information directly to your inbox</h4>
-    <form enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
-      {% csrf_token %}
-      <div class="field-wp">
-        <input type="email" name="email_field" class="field" placeholder="Your E-Mail">
-      </div>
-      <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
-      <span class="small-text">Get relevant information, unsubscribe at any time.</span>
-    </form>
+{% load static %}
+<a href="https://www.pythonforthelab.com/newsletter/python-lab/subscribe/">
+  <div class="mt-4 mb-4 block">
+    <img src="{% static 'img/newsletter_banner.png' %}" style="width: 100%">
   </div>
-</div>
+</a>
