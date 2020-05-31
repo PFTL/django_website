@@ -232,6 +232,23 @@ strong { font-weight: 700; }
 .intro.home .home-cnt .subscribe-form .field-wp .field:focus:-ms-input-placeholder { color: #2c3e50; opacity: 1; }
 .intro.home .home-cnt .subscribe-form .field-wp .field:focus:-moz-placeholder { color: #2c3e50; opacity: 1; }
 
+.block-newsletter .subscribe-form { padding: 50px 0 0 0; }
+.block-newsletter .subscribe-form .text { padding: 0 0 15px 0; font-size: 16px; line-height: 22px; color: #2c3e50; font-weight: 300; }
+.block-newsletter .subscribe-form .form-cnt { position: relative; display: table; }
+.block-newsletter .subscribe-form .form-cnt form { display: flex; justify-content: flex-start; position: relative; z-index: 5; }
+.block-newsletter .subscribe-form .form-cnt:after { content: ''; position: absolute; top: 24px; right: -28px; width: 50px; height: 50px; display: block; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAGElEQVQYlWNYs27T/zXrNv1nwAeIUjQKAL1tDC30/VkQAAAAAElFTkSuQmCC) repeat; }
+.block-newsletter .subscribe-form .field-wp { width: 375px; padding: 15px 20px; height: 25px; background: #ffffff; border-radius: 2px; }
+.block-newsletter .subscribe-form .field-wp .field { font-size: 18px; line-height: 25px; color: #a0b7cf; display: block; width: 100%; background: transparent; border: 0; transition: all .2s; }
+.block-newsletter .subscribe-form .field-wp .field::-webkit-input-placeholder { color: #a0b7cf; opacity: 1; }
+.block-newsletter .subscribe-form .field-wp .field::-moz-placeholder { color: #a0b7cf; opacity: 1; }
+.block-newsletter .subscribe-form .field-wp .field:-ms-input-placeholder { color: #a0b7cf; opacity: 1; }
+.block-newsletter .subscribe-form .field-wp .field:-moz-placeholder { color: #a0b7cf; opacity: 1; }
+.block-newsletter .subscribe-form .field-wp .field:focus { color: #2c3e50; }
+.block-newsletter .subscribe-form .field-wp .field:focus::-webkit-input-placeholder { color: #2c3e50; opacity: 1; }
+.block-newsletter .subscribe-form .field-wp .field:focus::-moz-placeholder { color: #2c3e50; opacity: 1; }
+.block-newsletter .subscribe-form .field-wp .field:focus:-ms-input-placeholder { color: #2c3e50; opacity: 1; }
+.block-newsletter .subscribe-form .field-wp .field:focus:-moz-placeholder { color: #2c3e50; opacity: 1; }
+
 .intro.home .home-cnt .subscribe-form .subscribe-btn { width: 170px; height: 55px; background: #18bc9c; border: 0; border-radius: 2px; font-size: 18px; color: #ffffff; position: relative; margin-left: -2px; display: block; font-weight: 300; cursor: pointer; transition: all .2s; }
 .intro.home .home-cnt .subscribe-form .subscribe-btn:hover { background-color: #1cceab; }
 
