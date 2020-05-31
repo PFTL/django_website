@@ -72,8 +72,6 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     'sorl.thumbnail',
     'newsletter',
-    'django_comments_xtd',
-    'django_comments',
 ]
 
 WAGTAIL_APPS = [
@@ -307,23 +305,8 @@ ACCOUNT_USERNAME_REQUIRED = False
 WAGTAIL_SITE_NAME = 'Python for the Lab'
 
 
-COMMENTS_APP = 'django_comments_xtd'
-COMMENTS_XTD_MAX_THREAD_LEVEL = 2
-COMMENTS_XTD_CONFIRM_EMAIL = True
-COMMENTS_XTD_APP_MODEL_OPTIONS = {
-    'default': {
-        'allow_flagging': True,
-        'allow_feedback': True,
-        'show_feedback': True,
-    }
-}
-# Source mail address used for notifications.
-COMMENTS_XTD_FROM_EMAIL = "noreply@example.com"
-# Contact mail address to show in messages.
-COMMENTS_XTD_CONTACT_EMAIL = "helpdesk@example.com"
-
 DEFAULT_FROM_NAME = 'Aquiles Carattino'
 
-WAGTAILMARKDOWN_EXTENSIONS = ['toc', 'admonition', ]
+WAGTAILMARKDOWN_EXTENSIONS = ['toc', 'admonition', 'fenced_code' ]
 
 WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'account/login.html'

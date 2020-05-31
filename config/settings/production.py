@@ -187,11 +187,6 @@ LOGGING = {
 
 BASE_URL = 'https://www.pythonforthelab.com'
 
-# Source mail address used for notifications.
-COMMENTS_XTD_FROM_EMAIL = "noreply@comments.pythonforthelab.com"
-# Contact mail address to show in messages.
-COMMENTS_XTD_CONTACT_EMAIL = "aquiles@comments.pythonforthelab.com"
-
 MANAGERS = (
     ('Aquiles Carattino', 'aqui.carattino@gmail.com'),
 )

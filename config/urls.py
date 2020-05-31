@@ -22,8 +22,6 @@ urlpatterns = [
 
     url(r'^search/$', search_views.search, name='search'),
 
-    url(r'^comments/', include('django_comments_xtd.urls')),
-
     url(r'^accounts/', include('allauth.urls')),
 
     url(r'^newsletter/', include('newsletter.urls')),
