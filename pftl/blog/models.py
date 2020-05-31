@@ -6,16 +6,19 @@ from django.shortcuts import redirect, render
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase, Tag
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
-from wagtail.core.fields import RichTextField
+from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
+from wagtailmarkdown.blocks import MarkdownBlock
 from wagtailmarkdown.edit_handlers import MarkdownPanel
 from wagtailmarkdown.fields import MarkdownField
 from wagtailmarkdown.utils import render_markdown
+
+from pftl.blog.blocks import NewsletterSubscribe, BookInline
 
 
 class BlogPeopleRelationship(Orderable, models.Model):
@@ -46,6 +49,13 @@ class BlogPage(Page):
 
     body = MarkdownField(blank=True)
 
+    extended_body = StreamField([
+        ('content', MarkdownBlock(template='blog/markdown_block.html')),
+        ('newsletter', NewsletterSubscribe()),
+        ('book', BookInline()),
+    ],
+    null=True)
+
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -69,6 +79,7 @@ class BlogPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('subtitle'),
+        StreamFieldPanel('extended_body'),
         MarkdownPanel('body'),
         ImageChooserPanel('image'),
         FieldPanel('image_data'),
