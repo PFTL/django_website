@@ -22,17 +22,12 @@
             <a class="button" href="https://gum.co/kgSsv" target="_blank">Get the Book</a>
             <div class="chapter-box">
                 <div class="title">
-                    Get a free sample chapter
+                    Want a sneak preview?
                 </div>
                 <div class="box-cnt">
-                    <p>Enter your e-mail and you will get a sample chapter in your inbox</p>
-                    <form action="/pftl/free_chapter" method="post" id="free-chapter">
-                      {% csrf_token %}
-                        <div class="field-wp">
-                            <input type="email" name="email" class="field" id="email" placeholder="Your E-Mail">
-                        </div>
-                        <div id="newsletter_feedback"></div>
-                        <input type="submit" class="send-btn" value="Get the free chapter">
+                    <p>Download the first few chapters of the book (including the table of contents)</p>
+                    <form method="post" id="free-chapter">
+                      <a href="{% static 'book/PythonForTheLab_free_chapters.pdf' %}"><input type="submit" class="send-btn" value="Get the free chapter"></a>
                     </form>
                 </div>
             </div>
