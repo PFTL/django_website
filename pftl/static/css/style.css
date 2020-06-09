@@ -207,6 +207,7 @@ strong { font-weight: 700; }
 .intro { position: relative; background: #ff6150; }
 .intro .logo { background-image: url(images/logo-dark.svg); }
 
+.intro.home .logo { background-image: url(images/logo-classic.svg); }
 .intro.home { position: relative; background: #e9ecf2; }
 .intro.home:before { content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%; display: block; background-image: -moz-linear-gradient( 87deg, rgb(157,173,200) 0%, rgb(255,255,255) 100%); background-image: -webkit-linear-gradient( 87deg, rgb(157,173,200) 0%, rgb(255,255,255) 100%); background-image: -ms-linear-gradient( 87deg, rgb(157,173,200) 0%, rgb(255,255,255) 100%); opacity: 0.102; }
 .intro.home .container { background: #e9ecf2 url(images/intro-home-bg.png) no-repeat 0 center; position: relative; z-index: 5; min-height: 200px; }
