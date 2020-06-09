@@ -27,13 +27,10 @@
                 <div class="box-cnt">
                     <p>Download the first few chapters of the book (including the table of contents)</p>
                     <form method="post" id="free-chapter">
-                      <a href="{% static 'book/PythonForTheLab_free_chapters.pdf' %}"><input type="submit" class="send-btn" value="Get the free chapter"></a>
+                      <a href="{% static 'book/PythonForTheLab_free_chapters.pdf' %}"><input type="button" class="send-btn" value="Get the free chapter"></a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-{% endblock %}
-{% block extra_js %}
-<script src="{% static 'js/freechapter_subscribe.js' %}"></script>
 {% endblock %}
