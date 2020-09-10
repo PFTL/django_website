@@ -14,7 +14,7 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.6 (pftl_website)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.8.5 Docker Compose (django at [/home/aquiles/Documents/Web/pftl/local.yml])" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery-3.4.1" level="application" />
   </component>
