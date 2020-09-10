@@ -5,7 +5,11 @@
     <div class="article-cnt">
       <div class="leftside">
         <div class="article-image">
-          {% if page.image %}
+          {% if page.video %}
+            <iframe width="860" height="465"
+                    src="{{ page.video }}">
+            </iframe>
+          {% elif page.image %}
             {% image page.image width-800 %}
           {% endif %}
         </div>
@@ -22,9 +26,9 @@
         </div>
         {% if self.body %}
           {{ self.body|markdown }}
-      {% else %}
+        {% else %}
           {{ self.extended_body }}
-      {% endif %}
+        {% endif %}
         <div class="info-list">
           <span class="item author">Article written by {{ page.first_author }}</span>
           {% if page.image_data %}

@@ -54,7 +54,7 @@ class BlogPage(Page):
         ('newsletter', NewsletterSubscribe()),
         ('book', BookInline()),
     ],
-    null=True)
+        null=True)
 
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -70,6 +70,12 @@ class BlogPage(Page):
         null=True,
         help_text='Information about the header image, to appear after the article')
 
+    video = models.TextField(
+        blank=True,
+        null=True,
+        help_text='If the article has an associated video, it will appear as the header'
+    )
+
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     date_published = models.DateField(
         "Date article published", blank=True, null=True
@@ -83,6 +89,7 @@ class BlogPage(Page):
         MarkdownPanel('body'),
         ImageChooserPanel('image'),
         FieldPanel('image_data'),
+        FieldPanel('video'),
         FieldPanel('date_published'),
         InlinePanel(
             'blog_person_relationship', label="Author(s)",
