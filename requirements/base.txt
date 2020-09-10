@@ -6,16 +6,16 @@ redis==3.4.1 # https://github.com/andymccurdy/redis-py
 
 # Django
 # ------------------------------------------------------------------------------
-django==3.0.5  # pyup: < 3.1  # https://www.djangoproject.com/
+django==3.1.1  # pyup: < 3.2  # https://www.djangoproject.com/
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
 django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
-django-allauth==0.41.0  # https://github.com/pennersr/django-allauth
+django-allauth==0.42.0  # https://github.com/pennersr/django-allauth
 django-crispy-forms==1.9.0  # https://github.com/django-crispy-forms/django-crispy-forms
 django-redis==4.11.0  # https://github.com/niwinz/django-redis
 django-extensions==2.2.9
 # Wagtail
 # ------------------------------------------------------------------------------
-wagtail==2.9.3
+wagtail==2.10.1
 wagtailfontawesome==1.2.1
 -e git://github.com/aquilesC/wagtail-markdown.git@develop#egg=wagtail-markdown
 # Newsletter
