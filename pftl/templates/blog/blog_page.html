@@ -100,10 +100,9 @@
     <div class="mobile-sb-form">
       <div class="sb-form">
         <h4>Get all the information directly to your inbox</h4>
-        <form enctype="multipart/form-data" method="post" action="/newsletter/python-lab/subscribe/">
-          {% csrf_token %}
+        <form enctype="multipart/form-data" method="post" action="https://newsletter.privalytics.io/subscribe/6b2a194f-96b3-4ebf-a43a-b7ebeffd872e/">
           <div class="field-wp">
-            <input type="email" name="email_field" class="field" placeholder="Your E-Mail">
+            <input type="email" name="email" class="field" placeholder="Your E-Mail">
           </div>
           <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
         </form>
@@ -112,6 +111,3 @@
 
   </div>
 {% endblock %}
-{#{% block extra_js %}#}
-{#  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>#}
-{#{% endblock %}#}
