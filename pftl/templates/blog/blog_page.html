@@ -37,28 +37,14 @@
         </div>
         <div class="bottom-section">
           <div class="comments">
-            <div id='discourse-comments'></div>
-
-            <script type="text/javascript">
-              DiscourseEmbed = {
-                discourseUrl: 'https://forum.pythonforthelab.com/',
-                discourseEmbedUrl: 'https://pythonforthelab.com{{ self.url }}'
-              };
-
-              (function () {
-                var d = document.createElement('script');
-                d.type = 'text/javascript';
-                d.async = true;
-                d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-              })();
+            <script src="https://utteranc.es/client.js"
+                    repo="PFTL/website_articles"
+                    issue-term="pathname"
+                    label="Comment"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
             </script>
-            {#            {% get_comment_count for self as comment_count %}#}
-            {##}
-            {#            <div class="all">{{ comment_count }} comment{{ comment_count|pluralize }}</div>#}
-            {#            {% if comment_count %}#}
-            {#              {% render_xtdcomment_tree for self allow_flagging %}#}
-            {#            {% endif %}#}
           </div>
         </div>
       </div>
@@ -84,7 +70,8 @@
           <button class="action">Never Stop Learning</button>
           <div class="cnt">
             <p>Join over 1000 Python developers and don't miss any updates!</p>
-            <form enctype="multipart/form-data" method="post" action="https://newsletter.privalytics.io/subscribe/6b2a194f-96b3-4ebf-a43a-b7ebeffd872e/">
+            <form enctype="multipart/form-data" method="post"
+                  action="https://newsletter.privalytics.io/subscribe/6b2a194f-96b3-4ebf-a43a-b7ebeffd872e/">
               <div class="field-wp">
                 <input type="email" name="email" class="field" placeholder="Your E-Mail">
               </div>
@@ -99,7 +86,8 @@
     <div class="mobile-sb-form">
       <div class="sb-form">
         <h4>Get all the information directly to your inbox</h4>
-        <form enctype="multipart/form-data" method="post" action="https://newsletter.privalytics.io/subscribe/6b2a194f-96b3-4ebf-a43a-b7ebeffd872e/">
+        <form enctype="multipart/form-data" method="post"
+              action="https://newsletter.privalytics.io/subscribe/6b2a194f-96b3-4ebf-a43a-b7ebeffd872e/">
           <div class="field-wp">
             <input type="email" name="email" class="field" placeholder="Your E-Mail">
           </div>
