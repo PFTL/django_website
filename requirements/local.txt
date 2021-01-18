@@ -3,8 +3,8 @@
 Werkzeug==1.0.1 # https://github.com/pallets/werkzeug
 ipdb==0.13.2  # https://github.com/gotcha/ipdb
 Sphinx==3.0.2  # https://github.com/sphinx-doc/sphinx
-psycopg2==2.8.5 --no-binary psycopg2  # https://github.com/psycopg/psycopg2
-
+# psycopg2==2.8.5 --no-binary psycopg2  # https://github.com/psycopg/psycopg2
+psycopg2-binary==2.8.5
 # Testing
 # ------------------------------------------------------------------------------
 mypy==0.770  # https://github.com/python/mypy
