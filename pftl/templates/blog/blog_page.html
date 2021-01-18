@@ -24,10 +24,10 @@
             <span class="item-tag {% if forloop.counter == 1 %}first{% endif %}">{{ tag }}</span>
           {% endfor %}
         </div>
-        {% if self.body %}
-          {{ self.body|markdown }}
-        {% else %}
+        {% if self.extended_body %}
           {{ self.extended_body }}
+        {% else %}
+          {{ self.body|markdown }}
         {% endif %}
         <div class="info-list">
           <span class="item author">Article written by {{ page.first_author }}</span>
@@ -35,18 +35,20 @@
             <span class="item designer">{{ page.image_data|richtext }}</span>
           {% endif %}
         </div>
-        <div class="bottom-section">
-          <div class="comments">
-            <script src="https://utteranc.es/client.js"
-                    repo="PFTL/website_articles"
-                    issue-term="pathname"
-                    label="Comment"
-                    theme="github-light"
-                    crossorigin="anonymous"
-                    async>
-            </script>
+        {% if page.allow_comments %}
+          <div class="bottom-section">
+            <div class="comments">
+              <script src="https://utteranc.es/client.js"
+                      repo="PFTL/website_articles"
+                      issue-term="pathname"
+                      label="Comment"
+                      theme="github-light"
+                      crossorigin="anonymous"
+                      async>
+              </script>
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
       <div class="rightside">
         <div class="support-box">
@@ -69,7 +71,7 @@
         <div class="subscribe-fixed">
           <button class="action">Never Stop Learning</button>
           <div class="cnt">
-            <p>Join over 1000 Python developers and don't miss any updates!</p>
+            <p>Join over 1500 Python developers and don't miss any updates!</p>
             <form enctype="multipart/form-data" method="post"
                   action="https://newsletter.privalytics.io/subscribe/6b2a194f-96b3-4ebf-a43a-b7ebeffd872e/">
               <div class="field-wp">
@@ -95,6 +97,5 @@
         </form>
       </div>
     </div>
-
   </div>
 {% endblock %}

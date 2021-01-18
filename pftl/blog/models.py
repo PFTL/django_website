@@ -10,6 +10,7 @@ from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPane
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page, Orderable
+from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
@@ -53,6 +54,7 @@ class BlogPage(Page):
         ('content', MarkdownBlock(template='blog/markdown_block.html')),
         ('newsletter', NewsletterSubscribe()),
         ('book', BookInline()),
+        ('video', EmbedBlock())
     ],
         null=True)
 
