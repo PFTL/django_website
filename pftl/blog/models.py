@@ -58,6 +58,8 @@ class BlogPage(Page):
     ],
         null=True)
 
+    excerpt = models.TextField(blank=True, null=True, help_text='Short text to display in lists of posts')
+
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -88,6 +90,7 @@ class BlogPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('subtitle'),
         StreamFieldPanel('extended_body'),
+        FieldPanel('excerpt'),
         MarkdownPanel('body'),
         ImageChooserPanel('image'),
         FieldPanel('image_data'),
@@ -159,6 +162,9 @@ class BlogPage(Page):
 
     @property
     def introduction(self):
+        if self.excerpt:
+            return self.excerpt
+
         html = render_markdown(self.body)
         soup = BeautifulSoup(html, "html.parser")
         try:
