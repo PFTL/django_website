@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/pftl.iml" filepath="$PROJECT_DIR$/.idea/pftl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../static_builder/.idea/static_builder.iml" filepath="$PROJECT_DIR$/../static_builder/.idea/static_builder.iml" />
     </modules>
   </component>
 </project>
