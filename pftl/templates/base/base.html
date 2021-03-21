@@ -18,11 +18,13 @@
           <div class="side-form small-sb-form">
             <div class="sb-form">
               <h4>Get all the information directly to your inbox</h4>
-              <form enctype="multipart/form-data" method="post" action="https://newsletter.privalytics.io/subscribe/6b2a194f-96b3-4ebf-a43a-b7ebeffd872e/">
+              <form method="post" action="https://tinyletter.com/aqui_carattino" method="post" target="popupwindow"
+                    onsubmit="window.open('https://tinyletter.com/aqui_carattino', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
                 <div class="field-wp">
-                  <input type="email" name="email" class="field" placeholder="Your E-Mail">
+                  <input type="email" name="email" id="tlemail" class="field" placeholder="Your E-Mail">
                 </div>
-                <input type="submit" class="send-btn" value="Subscribe to the Newsletter">
+                <input type="hidden" value="1" name="embed"/>
+                <input type="submit" class="subscribe-btn" value="Subscribe">
                 <span class="small-text">Get relevant information, unsubscribe at any time.</span>
               </form>
             </div>
