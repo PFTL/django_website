@@ -30,7 +30,7 @@ module.exports = {
                     loader: 'svelte-loader',
                     options: {
                         compilerOptions: {
-                            dev: !prod
+                            dev: !prod,
                         },
                         emitCss: prod,
                         hotReload: !prod,

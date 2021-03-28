@@ -17,7 +17,6 @@ from pftl.search import views as search_views
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
-    path('svelte', TemplateView.as_view(template_name='test_svelte.html')),
     url(r'^cms/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
