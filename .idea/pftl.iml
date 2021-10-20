@@ -14,19 +14,15 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.8 (pftl)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.8.12 Docker Compose (django at [/Users/aquiles/Documents/Web/pftl/local.yml])" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery-3.4.1" level="application" />
+    <orderEntry type="module" module-name="pftl_template" />
   </component>
   <component name="PackageRequirementsSettings">
     <option name="requirementsPath" value="$MODULE_DIR$/requirements/local.txt" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
-    <option name="TEMPLATE_FOLDERS">
-      <list>
-        <option value="$MODULE_DIR$/pftl/templates" />
-      </list>
-    </option>
   </component>
 </module>

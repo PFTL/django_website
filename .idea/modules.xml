@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/pftl.iml" filepath="$PROJECT_DIR$/.idea/pftl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pftl_template/.idea/pftl_template.iml" filepath="$PROJECT_DIR$/../pftl_template/.idea/pftl_template.iml" />
     </modules>
   </component>
 </project>
