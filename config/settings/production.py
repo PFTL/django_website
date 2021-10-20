@@ -162,6 +162,7 @@ LOGGING = {
             "level": "INFO",
             "class": "logging.FileHandler",
             'filename': '/webapps/pftl/logs/django_info.log',
+            "formatter": "verbose",
         }
     },
     "root": {"level": "INFO", "handlers": ["file"]},
