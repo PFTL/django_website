@@ -159,9 +159,9 @@ LOGGING = {
     },
     "handlers": {
         "file": {
-            "level": "INFO",
+            "level": "ERROR",
             "class": "logging.FileHandler",
-            'filename': '/webapps/pftl/logs/django_info.log',
+            'filename': '/webapps/pftl/logs/django_error.log',
             "formatter": "verbose",
         }
     },
@@ -172,21 +172,11 @@ LOGGING = {
             "handlers": ["file"],
             "propagate": False,
         },
-        # Errors logged by the SDK itself
-        "sentry_sdk": {
-            "level": "ERROR",
-            "handlers": ["file"],
-            "propagate": False
-            },
-        "django.security.DisallowedHost": {
-            "level": "ERROR",
-            "handlers": ["file"],
-            "propagate": False,
-        },
     },
 }
+
 SENTRY_DSN = env("SENTRY_DSN")
-SENTRY_LOG_LEVEL = env.int("DJANGO_SENTRY_LOG_LEVEL", logging.INFO)
+SENTRY_LOG_LEVEL = env.int("DJANGO_SENTRY_LOG_LEVEL", logging.ERROR)
 sentry_logging = LoggingIntegration(
     level=SENTRY_LOG_LEVEL,  # Capture info and above as breadcrumbs
     event_level=logging.ERROR,  # Send errors as events
