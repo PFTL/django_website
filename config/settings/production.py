@@ -1,7 +1,6 @@
 from .base import *  # noqa
 from .base import env
 
-
 import logging
 
 import sentry_sdk
@@ -32,9 +31,9 @@ CACHES = {
             # Mimicing memcache behavior.
             # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
             "IGNORE_EXCEPTIONS": True,
-        },
+            },
+        }
     }
-}
 
 # SECURITY
 # ------------------------------------------------------------------------------
@@ -53,13 +52,13 @@ SECURE_HSTS_SECONDS = 60
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-include-subdomains
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
     "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True
-)
+    )
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-preload
 SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
 # https://docs.djangoproject.com/en/dev/ref/middleware/#x-content-type-options-nosniff
 SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
     "DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True
-)
+    )
 
 # STORAGES
 # ------------------------------------------------------------------------------
@@ -78,7 +77,7 @@ _AWS_EXPIRY = 60 * 60 * 24 * 7
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 AWS_S3_OBJECT_PARAMETERS = {
     "CacheControl": f"max-age={_AWS_EXPIRY}, s-maxage={_AWS_EXPIRY}, must-revalidate"
-}
+    }
 #  https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 AWS_DEFAULT_ACL = None
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
@@ -102,23 +101,23 @@ TEMPLATES[-1]["OPTIONS"]["loaders"] = [  # type: ignore[index] # noqa F405
         [
             "django.template.loaders.filesystem.Loader",
             "django.template.loaders.app_directories.Loader",
-        ],
-    )
-]
+            ],
+        )
+    ]
 
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = env(
     "DJANGO_DEFAULT_FROM_EMAIL", default="Python for the Lab <noreply@pythonforthelab.com>"
-)
+    )
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = env(
     "DJANGO_EMAIL_SUBJECT_PREFIX", default="[Python for the Lab Website"
                                            "]"
-)
+    )
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -137,9 +136,7 @@ ANYMAIL = {
     "MAILGUN_API_KEY": env("MAILGUN_API_KEY"),
     "MAILGUN_SENDER_DOMAIN": env("MAILGUN_DOMAIN"),
     "MAILGUN_API_URL": env("MAILGUN_API_URL", default="https://api.mailgun.net/v3"),
-}
-
-
+    }
 
 # Collectfast
 # ------------------------------------------------------------------------------
@@ -154,33 +151,38 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
-        }
-    },
+                      "%(process)d %(thread)d %(message)s"
+            }
+        },
     "handlers": {
         "file": {
             "level": "ERROR",
             "class": "logging.FileHandler",
             'filename': '/webapps/pftl/logs/django_error.log',
             "formatter": "verbose",
-        }
-    },
+            }
+        },
     "root": {"level": "INFO", "handlers": ["file"]},
+    "django": {
+        "level": "INFO",
+        "handlers": [],
+        "propagate": False,
+        },
     "loggers": {
         "django.db.backends": {
             "level": "ERROR",
             "handlers": ["file"],
             "propagate": False,
+            },
         },
-    },
-}
+    }
 
 SENTRY_DSN = env("SENTRY_DSN")
 SENTRY_LOG_LEVEL = env.int("DJANGO_SENTRY_LOG_LEVEL", logging.ERROR)
 sentry_logging = LoggingIntegration(
     level=SENTRY_LOG_LEVEL,  # Capture info and above as breadcrumbs
     event_level=logging.ERROR,  # Send errors as events
-)
+    )
 integrations = [sentry_logging, DjangoIntegration()]
 
 sentry_sdk.init(
@@ -188,7 +190,7 @@ sentry_sdk.init(
     integrations=integrations,
     environment=env("SENTRY_ENVIRONMENT", default="production"),
     traces_sample_rate=env.float("SENTRY_TRACES_SAMPLE_RATE", default=0.0),
-)
+    )
 
 # Your stuff...
 # ------------------------------------------------------------------------------
@@ -197,7 +199,7 @@ BASE_URL = 'https://www.pythonforthelab.com'
 
 MANAGERS = (
     ('Aquiles Carattino', 'aqui.carattino@gmail.com'),
-)
+    )
 
 FROM_EMAIL = 'aquiles@newsletter.pythonforthelab.com'
 DEFAULT_FROM_EMAIL = 'aquiles@newsletter.pythonforthelab.com'
