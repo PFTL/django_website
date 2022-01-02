@@ -163,12 +163,12 @@ LOGGING = {
             }
         },
     "root": {"level": "INFO", "handlers": ["file"]},
-    "django": {
-        "level": "INFO",
-        "handlers": [],
-        "propagate": False,
-        },
     "loggers": {
+        "django": {
+            "level": "INFO",
+            "handlers": ['file'],
+            "propagate": False,
+        },
         "django.db.backends": {
             "level": "ERROR",
             "handlers": ["file"],
