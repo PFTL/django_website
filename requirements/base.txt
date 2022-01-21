@@ -15,7 +15,7 @@ django-redis==4.11.0  # https://github.com/niwinz/django-redis
 django-extensions==3.1.3
 # Wagtail
 # ------------------------------------------------------------------------------
-wagtail==2.14.2
+wagtail==2.15.2
 wagtailfontawesome==1.2.1
 wagtail-markdown==0.7.0
 # Newsletter
